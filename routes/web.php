@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller_utama;
 */
 Route::get('/hello_word',[Controller_utama::class,'index']);
 Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
+Route::post('login_aksi',[Controllrt_utama::class,'login_aksi'])
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,4 +23,8 @@ Route::get('/', function () {
 
 Route::get('/loginpage', function () {
     return view('login1');
+});
+
+Route::get('/dashbor', function () {
+    return view('dashboard');
 });

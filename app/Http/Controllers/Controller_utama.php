@@ -24,6 +24,10 @@ class Controller_utama extends Controller
     		return 'sukses';
     	}
     }
+    public function login_aksi()
+    {
+    	
+    }
 }
 
 
