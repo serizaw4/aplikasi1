@@ -13,7 +13,9 @@
     
     </div>
     <div class="col">
-      <form>
+      
+    <form method="POST" action="{{ url('/login_aksi') }}" class="user" >
+    @csrf
   <!-- Email input -->
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example1">Email address</label>
