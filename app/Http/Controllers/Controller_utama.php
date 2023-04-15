@@ -24,9 +24,12 @@ class Controller_utama extends Controller
     		return 'sukses';
     	}
     }
-    public function login_aksi()
+    public function login_aksi(Request $data)
     {
-    	
+        if(Auth::attempt(['email' => $data->email, 'password' => $data->pass])){
+            return 'sukses';
+        }
+    	return redirect('/loginpage');
     }
 }
 
