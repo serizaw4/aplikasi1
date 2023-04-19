@@ -33,14 +33,13 @@ class Controller_utama extends Controller
     }
 
     public function logout() {
-        return 1;
         try {
             session()->flush();
             // Auth::user()->token()->revoke();
             // Auth::user()->token()->delete();
-            return redirect('/');
-        } catch (Exception $e) {
             return redirect('/loginpage');
+        } catch (Exception $e) {
+            return redirect('/dashbor');
         }
     }
 }
