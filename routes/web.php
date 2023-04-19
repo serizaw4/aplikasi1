@@ -17,6 +17,11 @@ Route::get('/hello_word',[Controller_utama::class,'index']);
 Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
 Route::post('login_aksi',[Controller_utama::class,'login_aksi']);
 
+Route::group(['middleware' => ['auth']], function() {
+
+	Route::get('/logout', [Controller_utama::class,'logout']);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

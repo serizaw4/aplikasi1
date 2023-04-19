@@ -27,9 +27,21 @@ class Controller_utama extends Controller
     public function login_aksi(Request $data)
     {
         if(Auth::attempt(['email' => $data->email, 'password' => $data->password])){
-            return 'sukses';
+            return view('dashboard');
         }
     	return redirect('/loginpage');
+    }
+
+    public function logout() {
+        return 1;
+        try {
+            session()->flush();
+            // Auth::user()->token()->revoke();
+            // Auth::user()->token()->delete();
+            return redirect('/');
+        } catch (Exception $e) {
+            return redirect('/loginpage');
+        }
     }
 }
 
