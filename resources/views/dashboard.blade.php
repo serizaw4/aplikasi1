@@ -68,7 +68,7 @@
               </li>
               <li><a href="#">Drop Down 2</a></li>
               <li><a href="#">Drop Down 3</a></li>
-              <li><a href="{{ url('/logout') }}">Drop Down 4</a></li>
+              <li><a href="{{ url('/logout') }}">Log Out</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
