@@ -13,11 +13,46 @@
     
     </div>
     <div class="col">
+
+    @if ($errors->has('message_success'))
+
+  <div class="p-4 bg-success border border-success-subtle rounded-3">
+
+      <strong>{{ $errors->first('message_success') }}</strong>
+     
+
+  </div>
+    @endif
     
     @if ($errors->has('message'))
+
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+
       <strong>{{ $errors->first('message') }}</strong>
       {{-- <strong>cek eror</strong> --}}
+
+  </div>
     @endif
+
+    @if ($errors->has('email'))
+  
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+  
+
+    <strong>{{ $errors->first('email') }}</strong>
+
+  </div>
+  @endif
+
+
+  @if ($errors->has('password'))
+
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+
+    <strong>{{ $errors->first('password') }}</strong>
+
+  </div>
+  @endif
     
     <form method="POST" action="{{ url('/login_aksi') }}" class="user" >
     @csrf
@@ -27,14 +62,13 @@
     <input type="email" name="email" id="form2Example1" class="form-control" >
    
   </div>
-  @if ($errors->has('email'))
-    <strong>{{ $errors->first('email') }}</strong>
-  @endif
+
+
 
   <!-- Password input -->
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Password</label>
-    <input type="password" name="password" id="form2Example2" class="form-control" />
+    <input type="password" name="password" id="form2Example2" class="form-control" required>
     
   </div>
 
@@ -59,7 +93,7 @@
 
   <!-- Register buttons -->
   <div class="text-center">
-    <p>Not a member? <a href="#!">Register</a></p>
+    <p>Not a member? <a href="regist">Register</a></p>
     <p>or sign up with:</p>
     <button type="button" class="btn btn-link btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>

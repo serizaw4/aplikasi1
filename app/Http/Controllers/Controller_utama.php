@@ -45,6 +45,36 @@ class Controller_utama extends Controller
         ]);
     }
 
+    public function aksi_register(Request $data)
+    {
+    	$validator = Validator::make($data->all(),[
+    		'nama' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'password1' => 'required',
+        ]);
+        if($validator->fails()){      
+            return view('register1')->withErrors($validator->errors());
+        };
+
+    	if($data->password != $data->password1){
+    		return view('register1')->withErrors([
+    			'message'=> 'password tidak cocok'
+    		]);
+    	};
+    	$insert=User::create([
+    		'name' => $data->nama,
+    		'email' => $data->email,
+    		'password' => bcrypt($data->password),
+    	]);
+
+    	return view('login1')->withErrors([
+    			'message_success'=> 'register berhasil'
+    		]);
+
+    	
+    }
+
     public function logout() {
         try {
             session()->flush();

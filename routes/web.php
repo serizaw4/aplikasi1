@@ -15,7 +15,8 @@ use App\Http\Controllers\Controller_utama;
 */
 Route::get('/hello_word',[Controller_utama::class,'index']);
 Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
-Route::post('login_aksi',[Controller_utama::class,'login_aksi']);
+Route::post('/login_aksi',[Controller_utama::class,'login_aksi']);
+Route::post('/aksi_register',[Controller_utama::class,'aksi_register']);
 
 Route::group(['middleware' => ['auth']], function() {
 
@@ -32,4 +33,8 @@ Route::get('/loginpage', function () {
 
 Route::get('/dashbor', function () {
     return view('dashboard');
+});
+
+Route::get('/regist', function () {
+    return view('register1');
 });
