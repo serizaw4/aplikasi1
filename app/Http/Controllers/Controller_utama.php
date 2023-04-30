@@ -36,11 +36,11 @@ class Controller_utama extends Controller
         }
 
         if(Auth::attempt(['email' => $data->email, 'password' => $data->password])){
-            return view('dashboard');
+            return redirect('/dashboard');
         }
 
     	// return redirect('/loginpage');
-        return view('login1')->withErrors([
+        return redirect('/login_page')->withErrors([
             'message' =>'User atau password salah'
         ]);
     }
@@ -54,11 +54,11 @@ class Controller_utama extends Controller
             'password1' => 'required',
         ]);
         if($validator->fails()){      
-            return view('register1')->withErrors($validator->errors());
+            return redirect('/register')->withErrors($validator->errors());
         };
 
     	if($data->password != $data->password1){
-    		return view('register1')->withErrors([
+    		return redirect('/register')->withErrors([
     			'message'=> 'password tidak cocok'
     		]);
     	};
@@ -68,7 +68,7 @@ class Controller_utama extends Controller
     		'password' => bcrypt($data->password),
     	]);
 
-    	return view('login1')->withErrors([
+    	return redirect('/login_page')->withErrors([
     			'message_success'=> 'register berhasil'
     		]);
 
@@ -84,6 +84,20 @@ class Controller_utama extends Controller
         }
     }
 
+    public function dashboard()
+    {
+    	if(Auth::user()){
+            return view('login1');
+        }else{
+            return view('dashboard');
+        }
+    }
+
+    public function register()
+    {
+    	return view('register1');
+    }
+
     public function logout() {
         try {
             session()->flush();
@@ -91,7 +105,7 @@ class Controller_utama extends Controller
             // Auth::user()->token()->delete();
             return redirect('/login_page');
         } catch (Exception $e) {
-            return redirect('/dashbor');
+            return redirect('/dashboard');
         }
     }
 }

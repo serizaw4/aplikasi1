@@ -16,6 +16,8 @@ use App\Http\Controllers\Controller_utama;
 Route::get('/hello_word',[Controller_utama::class,'index']);
 Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
 Route::get('/login_page',[Controller_utama::class,'login_page']);
+Route::get('/dashboard',[Controller_utama::class,'dashboard']);
+Route::get('/register',[Controller_utama::class,'register']);
 Route::post('/login_aksi',[Controller_utama::class,'login_aksi']);
 Route::post('/aksi_register',[Controller_utama::class,'aksi_register']);
 
@@ -32,10 +34,10 @@ Route::get('/', function () {
 //     return view('login1');
 // });
 
-Route::get('/dashbor', function () {
-    return view('dashboard');
-});
+// Route::get('/dashbor', function () {
+//     return view('dashboard');
+// });
 
-Route::get('/regist', function () {
-    return view('register1');
-});
+// Route::get('/regist', function () {
+//     return view('register1');
+// });
