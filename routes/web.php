@@ -38,6 +38,6 @@ Route::get('/', function () {
 //     return view('dashboard');
 // });
 
-// Route::get('/regist', function () {
-//     return view('register1');
-// });
+Route::get('/regist', function () {
+    return view('register1');
+});

@@ -55,6 +55,12 @@
     
   </div>
 
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form2Example2">Masukkan Foto</label>
+    <input type="file" name="foto" id="form2Example2" class="form-control" required>
+    
+  </div>
+
   <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
   
       
