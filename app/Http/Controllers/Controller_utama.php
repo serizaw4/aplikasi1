@@ -80,14 +80,14 @@ class Controller_utama extends Controller
         if(!Auth::user()){
             return view('login1');
         }else{
-            return view('dashboard');
+            return redirect('/dashboard');
         }
     }
 
     public function dashboard()
     {
-    	if(Auth::user()){
-            return view('login1');
+    	if(!Auth::user()){
+            return redirect('/login_page');
         }else{
             return view('dashboard');
         }
