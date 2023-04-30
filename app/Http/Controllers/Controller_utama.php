@@ -86,10 +86,18 @@ class Controller_utama extends Controller
 
     public function dashboard()
     {
-    	if(!Auth::user()){
+        $user_cek=Auth::user();
+    	if(!$user_cek){
             return redirect('/login_page');
         }else{
-            return view('dashboard');
+            $foto='user_nw.png';
+            if(!empty($user_cek->foto)){
+                $foto=$user_cek->foto;
+            }
+
+            return view('dashboard')->with([
+                'foto' =>$foto
+            ]);
         }
     }
 

@@ -54,7 +54,12 @@
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown">
+            <a href="#">
+              {{-- <img width="80px" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" class="rounded"> --}}
+              <img width="80px" src="{{ asset('/storage/user/'.$foto) }}" class="rounded">
+              <i class="bi bi-chevron-down"></i>
+          </a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -71,7 +76,6 @@
               <li><a href="{{ url('/logout') }}">Log Out</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
