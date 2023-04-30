@@ -77,7 +77,11 @@ class Controller_utama extends Controller
 
     public function login_page()
     {
-    	return view('login1');
+        if(!Auth::user()){
+            return view('login1');
+        }else{
+            return view('dashboard');
+        }
     }
 
     public function logout() {
@@ -85,7 +89,7 @@ class Controller_utama extends Controller
             session()->flush();
             // Auth::user()->token()->revoke();
             // Auth::user()->token()->delete();
-            return redirect('/loginpage');
+            return redirect('/login_page');
         } catch (Exception $e) {
             return redirect('/dashbor');
         }
