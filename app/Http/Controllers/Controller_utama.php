@@ -63,10 +63,28 @@ class Controller_utama extends Controller
     		]);
     	};
     	$insert=User::create([
-    		'name' => $data->nama,
+            'name' => $data->nama,
     		'email' => $data->email,
     		'password' => bcrypt($data->password),
     	]);
+
+        if($data->hasFile('foto')){
+            $validator = Validator::make($data->all(),[
+                'foto'  => 'image|max:1000'
+            ]);
+            if($validator->fails()){      
+                return redirect('/register')->withErrors($validator->errors());
+            };
+
+            $ext  = $data->foto->getClientOriginalExtension();
+            $foto = $insert->id.'.'.$ext;
+
+            $data->foto->storeAs('public/user', $foto);
+
+            User::where('id',$insert->id)->update([
+                'foto' => $foto,
+            ]);
+        }
 
     	return redirect('/login_page')->withErrors([
     			'message_success'=> 'register berhasil'

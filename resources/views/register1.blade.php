@@ -25,7 +25,7 @@
   @endif
     
     
-    <form method="POST" action="{{ url('/aksi_register') }}" class="user" >
+    <form method="POST" action="{{ url('/aksi_register') }}" enctype="multipart/form-data" class="user" >
     @csrf
   <!-- Email input -->
   <div class="form-outline mb-4">
@@ -57,7 +57,7 @@
 
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Masukkan Foto</label>
-    <input type="file" name="foto" id="form2Example2" class="form-control" required>
+    <input type="file" name="foto" id="form2Example2" class="form-control">
     
   </div>
 
