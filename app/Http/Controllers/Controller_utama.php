@@ -75,6 +75,11 @@ class Controller_utama extends Controller
     	
     }
 
+    public function login_page()
+    {
+    	return view('login1');
+    }
+
     public function logout() {
         try {
             session()->flush();
