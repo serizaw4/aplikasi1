@@ -18,6 +18,8 @@ Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
 Route::get('/login_page',[Controller_utama::class,'login_page']);
 Route::get('/dashboard',[Controller_utama::class,'dashboard']);
 Route::get('/register',[Controller_utama::class,'register']);
+Route::get('/password',[Controller_utama::class,'password']);
+Route::get('/ganti_password',[Controller_utama::class,'ganti_password']);
 
 Route::post('/login_aksi',[Controller_utama::class,'login_aksi']);
 Route::post('/aksi_register',[Controller_utama::class,'aksi_register']);

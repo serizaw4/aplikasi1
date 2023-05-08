@@ -186,6 +186,10 @@ class Controller_utama extends Controller
             'message_success'=> 'edit berhasil'
         ]);
     }
+    public function ganti_password()
+    {
+        
+    }
 }
 
 
