@@ -62,7 +62,7 @@
           </a>
             <ul>
               <li><a href="profile">Edit Profile</a></li>
-              <li><a href="#">Ganti Password</a></li>
+              <li><a href="{{ url('/password') }}">Ganti Password</a></li>
               <li><a href="{{ url('/logout') }}">Log Out</a></li>
             </ul>
           </li>

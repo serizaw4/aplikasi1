@@ -188,7 +188,32 @@ class Controller_utama extends Controller
     }
     public function ganti_password()
     {
+        $validator = Validator::make($data->all(),[
+    		'pass_lama' => 'required',
+            'pass_baru' => 'required',
+            'pass_baru2' => 'required',
+        ]);
+        if($validator->fails()){      
+            return redirect('/profile')->withErrors($validator->errors());
+        };
+
+        $user_cek=Auth::user();
         
+        if(bcrypt($data->pass_lama) == $user_cek->password){
+            if($data->pass_baru == $data->pass_baru2){
+                // update
+                $data->pass_baru = bcrypt($data->pass_baru);
+            }else{
+                // eror password baru tidak sama
+            }
+        }else{
+            // eror pass lama salah
+        }
+    }
+
+    public function password()
+    {
+        return view('gantipass');
     }
 }
 
