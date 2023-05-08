@@ -137,7 +137,9 @@ class Controller_utama extends Controller
     public function profile()
     {
         $user_cek=Auth::user();
-            
+        if(empty($user_cek->foto)){
+            $user_cek->foto='user_nw.png';
+        }
         // return $user_cek;
         return view('profile1')->with([
             'user' => $user_cek
