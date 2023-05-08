@@ -9,8 +9,12 @@
   <body>
     <div class="container text-center">
   <div class="row" style="padding-top: 70px;">
+  
     <div class="col">
-    
+   
+    <img width="100px" src="{{ asset('/storage/user/'.$user->foto) }}" class="rounded">
+    <br><br>
+    <label class="form-label" for="form2Example2">Foto Lama</label>
     </div>
     <div class="col">
     
@@ -52,13 +56,13 @@
   </div>
 
 
-  <img width="60px" src="{{ asset('/storage/user/'.$user->foto) }}" class="rounded">
+  
  
     
   </div>
 
   <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example2">Masukkan Foto</label>
+    <label class="form-label" for="form2Example2">Foto Baru</label>
     <input type="file" name="foto" id="form2Example2" class="form-control">
     
   </div>
