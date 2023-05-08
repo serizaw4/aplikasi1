@@ -18,12 +18,15 @@ Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
 Route::get('/login_page',[Controller_utama::class,'login_page']);
 Route::get('/dashboard',[Controller_utama::class,'dashboard']);
 Route::get('/register',[Controller_utama::class,'register']);
+
 Route::post('/login_aksi',[Controller_utama::class,'login_aksi']);
 Route::post('/aksi_register',[Controller_utama::class,'aksi_register']);
+
 
 Route::group(['middleware' => ['auth']], function() {
 
 	Route::get('/logout', [Controller_utama::class,'logout']);
+    Route::get('/profile',[Controller_utama::class,'profile']);
 });
 
 Route::get('/', function () {

@@ -134,6 +134,20 @@ class Controller_utama extends Controller
             return redirect('/dashboard');
         }
     }
+    public function profile()
+    {
+        return view('profile1');
+    }
+    public function edit_profile(Request $data)
+    {
+        $validator = Validator::make($data->all(),[
+    		'nama' => 'required',
+            'email' => 'required|email',
+        ]);
+        if($validator->fails()){      
+            return redirect('/dashboard')->withErrors($validator->errors());
+        };
+    }
 }
 
 
