@@ -147,6 +147,7 @@ class Controller_utama extends Controller
     }
     public function edit_profile(Request $data)
     {
+        // return 1;
         $validator = Validator::make($data->all(),[
     		'nama' => 'required',
             'email' => 'required|email',
@@ -155,12 +156,7 @@ class Controller_utama extends Controller
             return redirect('/profile')->withErrors($validator->errors());
         };
 
-        
-
-        $foto='user_nw.png';
-            if(!empty($user_cek->foto)){
-                $foto=$user_cek->foto;
-            }
+        $user_cek=Auth::user();
 
         if($data->hasFile('foto')){
                 $validator = Validator::make($data->all(),[
@@ -171,15 +167,20 @@ class Controller_utama extends Controller
                 };
         
                 $ext  = $data->foto->getClientOriginalExtension();
-                $foto = $insert->id.'.'.$ext;
+                $foto = $user_cek->id.'.'.$ext;
     
                 $data->foto->storeAs('public/user', $foto);
     
-                User::where('id',$insert->id)->update([
-                    'nama' => $nama,
-                    'email' =>$email,
+                User::where('id',$user_cek->id)->update([
+                    'name' => $data->nama,
+                    'email' =>$data->email,
                     'foto' => $foto,
                 ]);
+        }else{
+            User::where('id',$user_cek->id)->update([
+                'name' => $data->nama,
+                'email' =>$data->email,
+            ]);
         }
         return redirect('/profile')->withErrors([
             'message_success'=> 'berhasil'

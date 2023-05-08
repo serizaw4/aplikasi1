@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::get('/logout', [Controller_utama::class,'logout']);
     Route::get('/profile',[Controller_utama::class,'profile']);
+    Route::post('/edit_profile',[Controller_utama::class,'edit_profile']);
 });
 
 Route::get('/', function () {
