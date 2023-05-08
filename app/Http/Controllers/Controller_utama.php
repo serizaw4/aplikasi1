@@ -152,7 +152,7 @@ class Controller_utama extends Controller
             'email' => 'required|email',
         ]);
         if($validator->fails()){      
-            return redirect('/dashboard')->withErrors($validator->errors());
+            return redirect('/profile')->withErrors($validator->errors());
         };
 
         
@@ -161,6 +161,29 @@ class Controller_utama extends Controller
             if(!empty($user_cek->foto)){
                 $foto=$user_cek->foto;
             }
+
+        if($data->hasFile('foto')){
+                $validator = Validator::make($data->all(),[
+                    'foto'  => 'image|max:1000'
+                ]);
+                if($validator->fails()){      
+                    return redirect('/profile')->withErrors($validator->errors());
+                };
+        
+                $ext  = $data->foto->getClientOriginalExtension();
+                $foto = $insert->id.'.'.$ext;
+    
+                $data->foto->storeAs('public/user', $foto);
+    
+                User::where('id',$insert->id)->update([
+                    'nama' => $nama,
+                    'email' =>$email,
+                    'foto' => $foto,
+                ]);
+        }
+        return redirect('/profile')->withErrors([
+            'message_success'=> 'berhasil'
+        ]);
     }
 }
 
