@@ -136,7 +136,11 @@ class Controller_utama extends Controller
     }
     public function profile()
     {
-        return view('profile1');
+        $user_cek=Auth::user();
+        // return $user_cek;
+        return view('profile1')->with([
+            'user' => $user_cek
+        ]);
     }
     public function edit_profile(Request $data)
     {

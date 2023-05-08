@@ -30,7 +30,7 @@
   <!-- Email input -->
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Nama</label>
-    <input type="text" name="nama" id="form2Example2" class="form-control" required>
+    <input type="text" value="{{ $user->name }}" name="nama" id="form2Example2" class="form-control" required>
     
   </div>
 
