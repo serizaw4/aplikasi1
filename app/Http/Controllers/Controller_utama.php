@@ -137,6 +137,7 @@ class Controller_utama extends Controller
     public function profile()
     {
         $user_cek=Auth::user();
+            
         // return $user_cek;
         return view('profile1')->with([
             'user' => $user_cek
@@ -151,6 +152,13 @@ class Controller_utama extends Controller
         if($validator->fails()){      
             return redirect('/dashboard')->withErrors($validator->errors());
         };
+
+        
+
+        $foto='user_nw.png';
+            if(!empty($user_cek->foto)){
+                $foto=$user_cek->foto;
+            }
     }
 }
 

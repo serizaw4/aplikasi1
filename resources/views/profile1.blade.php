@@ -36,12 +36,12 @@
 
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example1">Email</label>
-    <input type="email" name="email" id="form2Example1" class="form-control" >
+    <input type="email" name="email" value="{{ $user->email }}" id="form2Example1" class="form-control" >
    
   </div>
 
 
-
+  <img width="60px" src="{{ asset('/storage/user/'.$user->foto) }}" class="rounded">
  
     
   </div>
