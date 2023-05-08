@@ -27,10 +27,21 @@
     
     <form method="POST" action="{{ url('/edit_profile') }}" enctype="multipart/form-data" class="user" >
     @csrf
+    
+    <!-- @if ($errors->has('message_success'))
+  
+  <div class="p-4 bg-success border border-danger-subtle rounded-3">
+  
+
+    <strong>{{ $errors->first('message_success') }}</strong>
+
+  </div>
+  @endif -->
+    
   <!-- Email input -->
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Nama</label>
-    <input type="text" value="{{ $user->name }}" name="nama" id="form2Example2" class="form-control" required>
+    <input type="text" value="{{ $user->name }}" name="nama" id="form2Example2" class="form-control">
     
   </div>
 

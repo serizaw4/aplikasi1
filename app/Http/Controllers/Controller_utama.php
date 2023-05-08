@@ -183,7 +183,7 @@ class Controller_utama extends Controller
             ]);
         }
         return redirect('/profile')->withErrors([
-            'message_success'=> 'berhasil'
+            'message_success'=> 'edit berhasil'
         ]);
     }
 }
