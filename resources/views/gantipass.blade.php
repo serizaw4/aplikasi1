@@ -23,16 +23,30 @@
 
   </div>
     @endif
-    
+
     @if ($errors->has('message'))
 
   <div class="p-4 bg-danger border border-danger-subtle rounded-3">
 
       <strong>{{ $errors->first('message') }}</strong>
-      {{-- <strong>cek eror</strong> --}}
+     
 
   </div>
     @endif
+
+    
+
+    @if ($errors->has('message_success'))
+
+  <div class="p-4 bg-success border border-success-subtle rounded-3">
+
+      <strong>{{ $errors->first('message_success') }}</strong>
+     
+
+  </div>
+    @endif
+    
+    
 
     @if ($errors->has('email'))
   
@@ -59,7 +73,7 @@
   <!-- Email input -->
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example1">Masukkan Password Lama</label>
-    <input type="password" name="password_lama" id="form2Example1" class="form-control" >
+    <input type="password" name="pass_lama" id="form2Example1" class="form-control" >
    
   </div>
 
@@ -68,15 +82,17 @@
   <!-- Password input -->
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Password Baru</label>
-    <input type="password" name="password1" id="form2Example2" class="form-control" required>
+    <input type="password" name="pass_baru" id="form2Example2" class="form-control" required>
     
   </div>
 
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Konfirmasi Password Baru</label>
-    <input type="password" name="password2" id="form2Example2" class="form-control" required>
+    <input type="password" name="pass_baru2" id="form2Example2" class="form-control" required>
     
   </div>
+
+  <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
 
   
 </form>
