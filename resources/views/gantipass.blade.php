@@ -35,17 +35,6 @@
     @endif
 
     
-
-    @if ($errors->has('message_success'))
-
-  <div class="p-4 bg-success border border-success-subtle rounded-3">
-
-      <strong>{{ $errors->first('message_success') }}</strong>
-     
-
-  </div>
-    @endif
-    
     
 
     @if ($errors->has('email'))
