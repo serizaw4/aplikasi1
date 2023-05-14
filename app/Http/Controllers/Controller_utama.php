@@ -200,14 +200,22 @@ class Controller_utama extends Controller
         $user_cek=Auth::user();
 
         if(Auth::attempt(['email' => $user_cek->email, 'password' => $data->pass_lama])){
-        // if(bcrypt($data->pass_lama) == $user_cek->password){
+       
             if($data->pass_baru == $data->pass_baru2){
-                User::where('id',$user_cek->id)->update([
-                    'password' => bcrypt($data->pass_baru)
-                ]);
-                return redirect('/password')->withErrors([
-                    'message_success'=>'Password Telah Diganti'
-                ]);
+               
+                if($data->pass_lama == $data->pass_baru){
+                    return redirect('/password')->withErrors([
+                        'message'=> 'Error Password Baru dan Lama Sama'
+                    ]);
+                }else{
+                    User::where('id',$user_cek->id)->update([
+                        'password' => bcrypt($data->pass_baru)
+                    ]);
+                    return redirect('/password')->withErrors([
+                        'message_success'=>'Password Telah Diganti'
+                    ]);
+                
+                }
             }else{
                 return redirect('/password')->withErrors([
                     'message'=> 'Error Password Baru Tidak Sama'
