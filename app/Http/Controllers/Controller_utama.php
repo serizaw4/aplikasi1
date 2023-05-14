@@ -201,8 +201,11 @@ class Controller_utama extends Controller
         
         if(bcrypt($data->pass_lama) == $user_cek->password){
             if($data->pass_baru == $data->pass_baru2){
-                // update
-                $data->pass_baru = bcrypt($data->pass_baru);
+                User::where('id',$user_cek->id)->update([
+                    $data->pass_baru = bcrypt($data->pass_baru);
+                   
+                ]);
+                
             }else{
                 // eror password baru tidak sama
             }
