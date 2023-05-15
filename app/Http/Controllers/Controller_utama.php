@@ -232,6 +232,34 @@ class Controller_utama extends Controller
     {
         return view('gantipass');
     }
+    public function kirim_pesan(Request $data)
+    {
+        $validator = Validator::make($data->all(),[
+    		'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+        if($validator->fails()){      
+            return view('login1')->withErrors($validator->errors());
+        }
+
+        $insert=message::create([
+            'name' => $data->nama,
+    		'email' => $data->email,
+    		'subject' => $data->subject,
+            'message'=> $data->message,
+    	]);
+        if($insert){
+            return redirect('/dashboard')->withErrors([
+                'message_success'=>'Berhasil Dikirim'
+            ]);
+        }else{
+            return redirect('/dashboard')->withErrors([
+                'message'=> 'Gagal Dikirim'
+            ]);
+        }
+    }
 }
 
 

@@ -35,6 +35,26 @@
   ======================================================== -->
 </head>
 
+@if ($errors->has('message_success'))
+
+  <div class="p-4 bg-success border border-success-subtle rounded-3">
+
+      <strong>{{ $errors->first('message_success') }}</strong>
+     
+
+  </div>
+    @endif
+
+    @if ($errors->has('message'))
+
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+
+      <strong>{{ $errors->first('message') }}</strong>
+     
+
+  </div>
+    @endif
+
 <body>
 
   <!-- ======= Header ======= -->
@@ -499,7 +519,7 @@
           </div>
 
           <div class="col-lg-5 col-md-12">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{{ url('/kirim_pesan') }}" method="post" role="form" class="php-email-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>

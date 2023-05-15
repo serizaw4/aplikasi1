@@ -23,12 +23,14 @@ Route::post('/login_aksi',[Controller_utama::class,'login_aksi']);
 Route::post('/aksi_register',[Controller_utama::class,'aksi_register']);
 
 
+
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/password',[Controller_utama::class,'password']);
     Route::post('/ganti_password',[Controller_utama::class,'ganti_password']);
 	Route::get('/logout', [Controller_utama::class,'logout']);
     Route::get('/profile',[Controller_utama::class,'profile']);
     Route::post('/edit_profile',[Controller_utama::class,'edit_profile']);
+    Route::post('/kirim_pesan',[Controller_utama::class,'kirim_pesan']);
 });
 
 Route::get('/', function () {
