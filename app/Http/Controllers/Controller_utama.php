@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -244,8 +245,8 @@ class Controller_utama extends Controller
             return view('login1')->withErrors($validator->errors());
         }
 
-        $insert=message::create([
-            'name' => $data->nama,
+        $insert=Message::create([
+            'name' => $data->name,
     		'email' => $data->email,
     		'subject' => $data->subject,
             'message'=> $data->message,

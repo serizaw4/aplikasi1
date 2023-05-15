@@ -35,25 +35,7 @@
   ======================================================== -->
 </head>
 
-@if ($errors->has('message_success'))
 
-  <div class="p-4 bg-success border border-success-subtle rounded-3">
-
-      <strong>{{ $errors->first('message_success') }}</strong>
-     
-
-  </div>
-    @endif
-
-    @if ($errors->has('message'))
-
-  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
-
-      <strong>{{ $errors->first('message') }}</strong>
-     
-
-  </div>
-    @endif
 
 <body>
 
@@ -517,9 +499,29 @@
 
             </div>
           </div>
+          @if ($errors->has('message_success'))
+
+  <div class="p-4 bg-success border border-success-subtle rounded-3" style="color:white">
+
+      <strong>{{ $errors->first('message_success') }}</strong>
+     
+
+  </div>
+    @endif
+
+    @if ($errors->has('message'))
+
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+
+      <strong>{{ $errors->first('message') }}</strong>
+     
+
+  </div>
+    @endif
 
           <div class="col-lg-5 col-md-12">
-            <form action="{{ url('/kirim_pesan') }}" method="post" role="form" class="php-email-form">
+            <form action="{{ url('/kirim_pesan') }}" method="post" role="form">
+              @csrf
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
@@ -532,11 +534,7 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
+              <br>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
