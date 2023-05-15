@@ -499,27 +499,28 @@
 
             </div>
           </div>
-          @if ($errors->has('message_success'))
-
-  <div class="p-4 bg-success border border-success-subtle rounded-3" style="color:white">
-
-      <strong>{{ $errors->first('message_success') }}</strong>
-     
-
-  </div>
-    @endif
-
-    @if ($errors->has('message'))
-
-  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
-
-      <strong>{{ $errors->first('message') }}</strong>
-     
-
-  </div>
-    @endif
 
           <div class="col-lg-5 col-md-12">
+            @if ($errors->has('message_success'))
+  
+              <div class="p-4 bg-success border border-success-subtle rounded-3" style="color:white">
+            
+                  <strong>{{ $errors->first('message_success') }}</strong>
+                
+            
+              </div>
+            @endif
+          
+            @if ($errors->has('message'))
+          
+              <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+            
+                  <strong>{{ $errors->first('message') }}</strong>
+                
+            
+              </div>
+            @endif
+
             <form action="{{ url('/kirim_pesan') }}" method="post" role="form">
               @csrf
               <div class="form-group">
