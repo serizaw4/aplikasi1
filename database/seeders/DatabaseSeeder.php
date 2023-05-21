@@ -15,7 +15,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('menus')->insert([
-            [ 'nama' => 'cek','harga' => 'cek', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek sambal ijo','harga' => '20000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek sambal matah','harga' => '20000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek sambal kecap','harga' => '20000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek sambal terasi','harga' => '20000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek level 1','harga' => '15000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek level 2','harga' => '18000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek level 3','harga' => '20000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek level 4','harga' => '22000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek level 5','harga' => '24000', 'foto' => 'cek' ],
         ]);
         // \App\Models\User::factory(10)->create();
     }
