@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller_utama;
 Route::get('/hello_word',[Controller_utama::class,'index']);
 Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
 Route::get('/login_page',[Controller_utama::class,'login_page']);
+Route::get('/login',[Controller_utama::class,'login_page'])->name('login');
 Route::get('/dashboard',[Controller_utama::class,'dashboard']);
 Route::get('/register',[Controller_utama::class,'register']);
 
