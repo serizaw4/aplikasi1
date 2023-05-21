@@ -261,6 +261,10 @@ class Controller_utama extends Controller
             ]);
         }
     }
+    public function cek()
+    {
+        return '1';
+    }
 }
 
 

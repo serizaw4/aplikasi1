@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/profile',[Controller_utama::class,'profile']);
     Route::post('/edit_profile',[Controller_utama::class,'edit_profile']);
     Route::post('/kirim_pesan',[Controller_utama::class,'kirim_pesan']);
+    Route::get('/cek', [Controller_utama::class,'cek']);
 });
 
 Route::get('/', function () {
