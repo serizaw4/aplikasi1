@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('menus')->insert([
-            [ 'nama' => 'geprek sambal ijo','harga' => '20000', 'foto' => 'cek' ],
+            [ 'nama' => 'geprek sambal ijo','harga' => '20000', 'foto' => 'cek', 'created_at' => Carbon::now() ],
             [ 'nama' => 'geprek sambal matah','harga' => '20000', 'foto' => 'cek' ],
             [ 'nama' => 'geprek sambal kecap','harga' => '20000', 'foto' => 'cek' ],
             [ 'nama' => 'geprek sambal terasi','harga' => '20000', 'foto' => 'cek' ],
