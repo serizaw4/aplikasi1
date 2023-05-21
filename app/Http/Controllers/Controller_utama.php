@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class Controller_utama extends Controller
@@ -263,7 +264,9 @@ class Controller_utama extends Controller
     }
     public function cek()
     {
-        return '1';
+        return Message::all();
+        // return DB::table('messages')->get();
+        // return Message::where('id',3)->delete();
     }
 }
 
