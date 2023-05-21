@@ -109,7 +109,7 @@
             <div class="portfolio-wrap">
               <img src="{{ asset('img/portfolio/'.$item->foto) }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h3><a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">Sambal Ijo</a></h3>
+                <h3><a href="{{ asset('img/portfolio/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
                 <div>
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 
