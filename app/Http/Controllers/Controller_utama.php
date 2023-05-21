@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Message;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -107,6 +108,7 @@ class Controller_utama extends Controller
     public function dashboard()
     {
         $user_cek=Auth::user();
+        $get=Menu::all();
     	if(!$user_cek){
             return redirect('/login_page');
         }else{
@@ -116,9 +118,14 @@ class Controller_utama extends Controller
             }
 
             return view('dashboard')->with([
-                'foto' =>$foto
+                'foto' =>$foto,
+                'menu' =>$get
             ]);
         }
+
+       
+
+
     }
 
     public function register()
