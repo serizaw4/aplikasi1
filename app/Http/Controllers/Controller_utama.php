@@ -308,8 +308,10 @@ class Controller_utama extends Controller
             
         ]);
         if($validator->fails()){      
-            return view('login1')->withErrors($validator->errors());
+            return view('dashboard')->withErrors($validator->errors());
         }
+
+        $user_cek=Auth::user();
 
         if($data->hasFile('foto')){
                 $validator = Validator::make($data->all(),[
@@ -322,7 +324,7 @@ class Controller_utama extends Controller
                 $ext  = $data->foto->getClientOriginalExtension();
                 $foto = $user_cek->id.'.'.$ext;
     
-                $data->foto->storeAs('public/user', $foto);
+                $data->foto->storeAs('public/menu', $foto);
         }
 
         $insert=Menu::create([
@@ -341,7 +343,7 @@ class Controller_utama extends Controller
             ]);
         }
 
-        $user_cek=Auth::user();
+        
     }
 
 }

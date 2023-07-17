@@ -99,6 +99,26 @@
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">Menu</li>
 
+              @if ($errors->has('message_success'))
+  
+  <div class="p-4 bg-success border border-success-subtle rounded-3">
+  
+
+    <strong>{{ $errors->first('message_success') }}</strong>
+
+  </div>
+  @endif
+
+  @if ($errors->has('message'))
+  
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+  
+
+    <strong>{{ $errors->first('message') }}</strong>
+
+  </div>
+  @endif
+
               <form method="POST" action="{{ url('/input_menu') }}" enctype="multipart/form-data" class="user" >
     @csrf
     <div class="form-outline mb-4">
