@@ -298,6 +298,51 @@ class Controller_utama extends Controller
 
 
     }
+
+    public function input_menu(Request $data)
+    {
+        $validator = Validator::make($data->all(),[
+    		'nama' => 'required',
+            'harga' => 'required',
+            'foto' => 'required',
+            
+        ]);
+        if($validator->fails()){      
+            return view('login1')->withErrors($validator->errors());
+        }
+
+        $insert=Menu::create([
+            'nama' => $data->nama,
+    		'harga' => $data->harga,
+    		'foto' => $data->foto,
+            
+    	]);
+        if($insert){
+            return redirect('/dashboard')->withErrors([
+                'message_success'=>'Berhasil Dikirim'
+            ]);
+        }else{
+            return redirect('/dashboard')->withErrors([
+                'message'=> 'Gagal Dikirim'
+            ]);
+        }
+
+        $user_cek=Auth::user();
+
+        if($data->hasFile('foto')){
+                $validator = Validator::make($data->all(),[
+                    'foto'  => 'image|max:1000'
+                ]);
+                if($validator->fails()){      
+                    return redirect('dashboard')->withErrors($validator->errors());
+                };
+        
+                $ext  = $data->foto->getClientOriginalExtension();
+                $foto = $user_cek->id.'.'.$ext;
+    
+                $data->foto->storeAs('public/user', $foto);
+    }
 }
 
+}
 
