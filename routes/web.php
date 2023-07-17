@@ -36,9 +36,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/cek', [Controller_utama::class,'cek']);
 });
 
-Route::get('/', function () {
-    return view('dashboard2');
-});
+Route::get('/', [Controller_utama::class,'dashboard2']);
 
 // Route::get('/loginpage', function () {
 //     return view('login1');
