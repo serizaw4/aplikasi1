@@ -275,6 +275,29 @@ class Controller_utama extends Controller
         // return DB::table('messages')->get();
         // return Message::where('id',3)->delete();
     }
+
+    public function dashboard2()
+    {
+        $user_cek=Auth::user();
+        $get=Menu::all();
+    	if(!$user_cek){
+            return redirect('/login_page');
+        }else{
+            $foto='user_nw.png';
+            if(!empty($user_cek->foto)){
+                $foto=$user_cek->foto;
+            }
+
+            return view('dashboard2')->with([
+                'foto' =>$foto,
+                'menu' =>$get
+            ]);
+        }
+
+       
+
+
+    }
 }
 
 
