@@ -141,7 +141,7 @@
 
   <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
   
-      
+  </form>
     </div>
     <div class="col">
       
@@ -160,6 +160,7 @@
               <img src="{{ asset('img/portfolio/'.$item->foto) }}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h3><a href="{{ asset('img/portfolio/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
+                <a href="{{ url('/hapus_menu/'.$item->id) }}"><button class="btn-danger">Hapus</button></a>
                 <div>
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 

@@ -343,5 +343,10 @@ class Controller_utama extends Controller
         
     }
 
+    public function hapus_menu($id_menu)
+    {
+        return $id_menu;
+    }
+
 }
 

@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/kirim_pesan',[Controller_utama::class,'kirim_pesan']);
     Route::get('/cek', [Controller_utama::class,'cek']);
     Route::post('/input_menu', [Controller_utama::class,'input_menu']);
+    Route::get('/hapus_menu/{id}', [Controller_utama::class,'hapus_menu']);
 });
 
 Route::get('/', [Controller_utama::class,'tampilan_awal']);
