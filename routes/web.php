@@ -18,7 +18,7 @@ Route::get('/create_user/{email}',[Controller_utama::class,'create_user']);
 Route::get('/login_page',[Controller_utama::class,'login_page']);
 Route::get('/login',[Controller_utama::class,'login_page'])->name('login');
 Route::get('/dashboard',[Controller_utama::class,'dashboard']);
-Route::get('/dashboard2',[Controller_utama::class,'dashboard2']);
+Route::get('/tampilan_awal',[Controller_utama::class,'tampilan_awal']);
 Route::get('/register',[Controller_utama::class,'register']);
 
 Route::post('/login_aksi',[Controller_utama::class,'login_aksi']);
@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/input_menu', [Controller_utama::class,'input_menu']);
 });
 
-Route::get('/', [Controller_utama::class,'dashboard2']);
+Route::get('/', [Controller_utama::class,'tampilan_awal']);
 
 // Route::get('/loginpage', function () {
 //     return view('login1');

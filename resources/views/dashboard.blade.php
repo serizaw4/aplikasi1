@@ -119,7 +119,7 @@
   </div>
   @endif
 
-              <form method="POST" action="{{ url('/input_menu') }}" enctype="multipart/form-data" class="user" >
+  <form method="POST" action="{{ url('/input_menu') }}" enctype="multipart/form-data" class="user" >
     @csrf
     <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Nama Menu</label>
@@ -147,7 +147,7 @@
       
     </div>
   </div>
-</div>
+</div>  
               
             </ul>
           </div>

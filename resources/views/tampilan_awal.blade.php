@@ -47,7 +47,7 @@
         <h1><a href="index.html">Geprek</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+      <!-- </div>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -70,7 +70,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>.navbar
 
-    </div>
+    </div> -->
   </header><!-- End #header -->
 
   <!-- ======= Hero Section ======= -->
@@ -103,35 +103,7 @@
           </div>
         </div>
 
-        <form method="POST" action="{{ url('/input_menu') }}" enctype="multipart/form-data" class="user" >
-    @csrf
-    <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example2">Nama Menu</label>
-    <input type="text" name="nama" id="form2Example2" class="form-control">
-    
-  </div>
-
-  <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example1">Harga</label>
-    <input type="text" name="harga" id="form2Example1" class="form-control" >
-   
-  </div>
-
-  <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example2">Foto</label>
-    <input type="file" name="foto" id="form2Example2" class="form-control">
-    
-  </div>
-
-  <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-  
-      
-    </div>
-    <div class="col">
-      
-    </div>
-  </div>
-</div>
+        
 
 @foreach ($menu as $item)
         <div class="row portfolio-container">

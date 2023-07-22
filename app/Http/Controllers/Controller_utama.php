@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Menu;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -276,23 +277,19 @@ class Controller_utama extends Controller
         // return Message::where('id',3)->delete();
     }
 
-    public function dashboard2()
+    public function tampilan_awal()
     {
-        $user_cek=Auth::user();
+        
         $get=Menu::all();
-    	if(!$user_cek){
-            return redirect('/login_page');
-        }else{
+    	
             $foto='user_nw.png';
-            if(!empty($user_cek->foto)){
-                $foto=$user_cek->foto;
-            }
+            
 
-            return view('dashboard2')->with([
+            return view('tampilan_awal')->with([
                 'foto' =>$foto,
                 'menu' =>$get
             ]);
-        }
+        
 
        
 
@@ -322,7 +319,7 @@ class Controller_utama extends Controller
                 };
         
                 $ext  = $data->foto->getClientOriginalExtension();
-                $foto = $user_cek->id.'.'.$ext;
+                $foto = $user_cek->id.'.'.strtotime(Carbon::now()).$ext;
     
                 $data->foto->storeAs('public/menu', $foto);
         }
