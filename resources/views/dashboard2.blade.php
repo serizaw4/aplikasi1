@@ -49,7 +49,7 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <!-- <nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Menu</a></li>
@@ -68,7 +68,7 @@
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>.navbar -->
+      </nav>.navbar
 
     </div>
   </header><!-- End #header -->
@@ -102,14 +102,45 @@
             </ul>
           </div>
         </div>
+
+        <form method="POST" action="{{ url('/input_menu') }}" enctype="multipart/form-data" class="user" >
+    @csrf
+    <div class="form-outline mb-4">
+    <label class="form-label" for="form2Example2">Nama Menu</label>
+    <input type="text" name="nama" id="form2Example2" class="form-control">
+    
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form2Example1">Harga</label>
+    <input type="text" name="harga" id="form2Example1" class="form-control" >
+   
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form2Example2">Foto</label>
+    <input type="file" name="foto" id="form2Example2" class="form-control">
+    
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+  
+      
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+</div>
+
 @foreach ($menu as $item)
         <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{{ asset('img/portfolio/'.$item->foto) }}" class="img-fluid" alt="">
+              <img src="{{ asset('public/menu/'.$item->foto) }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h3><a href="{{ asset('img/portfolio/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
+                <h3><a href="{{ asset('public/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
                 <div>
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 
