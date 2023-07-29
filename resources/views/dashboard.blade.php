@@ -161,7 +161,7 @@
               <div class="portfolio-info">
                 <h3><a href="{{ asset('img/portfolio/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
                 <a href="{{ url('/hapus_menu/'.$item->id) }}"><button class="btn-danger">Hapus</button></a>
-                <a href="edit"><button class="btn-danger">Edit</button></a>
+                <a href="{{ url('/edit_dashboard/'.$item->id) }}"><button class="btn-danger">Edit</button></a>
                 <div>
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 

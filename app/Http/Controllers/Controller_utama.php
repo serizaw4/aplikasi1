@@ -376,7 +376,7 @@ class Controller_utama extends Controller
         }
     }
 
-    public function edit_dashboard()
+    public function edit_dashboard($id_menu)
     {
         return view('edit_dashboard');
     }
