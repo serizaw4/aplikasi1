@@ -361,15 +361,26 @@ class Controller_utama extends Controller
     public function edit_menu(Request $data)
     {
         $update=[
-            'name'  => $data->nama,
-            'email' => $data->email
+            'nama'  => $data->nama,
+            'harga' => $data->harga,
         ];
+
+        $validator = Validator::make($data->all(),[
+            'foto'  => 'image|max:1000'
+        ]);
+        if($validator->fails()){      
+            return redirect('/edit_dashboard')->withErrors($validator->errors());
+        };
+
+        $ext  = $data->foto->getClientOriginalExtension();
+        $foto = $insert->id.'.'.$ext;
 
         if($data->hasFile('foto')){
                 $update['foto'] = $foto;
         }
 
         $edit=Menu::where('id',$id_menu)->update($update);
+        return;
     }
 
     public function edit_dashboard($id_menu)
