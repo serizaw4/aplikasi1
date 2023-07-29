@@ -123,13 +123,13 @@
     @csrf
     <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Nama Menu</label>
-    <input type="text" name="nama" id="form2Example2" class="form-control" value="{{ $menu->nama }}">
+    <input type="text" name="nama" id="form2Example2" class="form-control" value="{{ $data_menu->nama }}">
     
   </div>
 
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example1">Harga</label>
-    <input type="text" name="harga" id="form2Example1" class="form-control" value="{{ $menu->harga }}">
+    <input type="text" name="harga" id="form2Example1" class="form-control" value="{{ $data_menu->harga }}">
    
   </div>
 

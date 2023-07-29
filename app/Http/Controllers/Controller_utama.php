@@ -389,11 +389,12 @@ class Controller_utama extends Controller
             if(!empty($user_cek->foto)){
                 $foto=$user_cek->foto;
             }
+            return view('edit_dashboard')->with([
+                'foto' =>$foto,
+                'menu' =>$get,
+                'data_menu' =>$data_menu,
+            ]);
         }    
-        return view('edit_dashboard')->with([
-            'foto' =>$foto,
-            'menu' =>$get
-        ]);
     }
 
 }
