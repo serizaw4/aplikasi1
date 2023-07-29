@@ -119,17 +119,17 @@
   </div>
   @endif
 
-  <form method="POST" action="{{ url('/input_menu') }}" enctype="multipart/form-data" class="user" >
+  <form method="POST" action="{{ url('/edit_menu') }}" enctype="multipart/form-data" class="user" >
     @csrf
     <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Nama Menu</label>
-    <input type="text" name="nama" id="form2Example2" class="form-control">
+    <input type="text" name="nama" id="form2Example2" class="form-control" value="{{ $menu->nama }}">
     
   </div>
 
   <div class="form-outline mb-4">
     <label class="form-label" for="form2Example1">Harga</label>
-    <input type="text" name="harga" id="form2Example1" class="form-control" >
+    <input type="text" name="harga" id="form2Example1" class="form-control" value="{{ $menu->harga }}">
    
   </div>
 
@@ -161,7 +161,7 @@
               <div class="portfolio-info">
                 <h3><a href="{{ asset('img/portfolio/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
                 <a href="{{ url('/hapus_menu/'.$item->id) }}"><button class="btn-danger">Hapus</button></a>
-                <a href="edit"><button class="btn-danger">Edit</button></a>
+                
                 <div>
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 

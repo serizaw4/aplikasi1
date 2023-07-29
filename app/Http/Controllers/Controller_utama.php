@@ -358,5 +358,28 @@ class Controller_utama extends Controller
         }
     }
 
+    public function edit_menu(Request $data)
+    {
+        if($data->hasFile('foto')){
+        $edit=Menu::where('id',$id_menu)->update([
+            'name' => $data->nama,
+            'email' =>$data->email,
+            'foto' => $foto,
+        ]);
+        }
+        else{
+            $edit=Menu::where('id',$id_menu)->update([
+                'name' => $data->nama,
+                'email' =>$data->email,
+            ]);
+               
+        }
+    }
+
+    public function edit_dashboard()
+    {
+        return view('edit_dashboard');
+    }
+
 }
 
