@@ -378,6 +378,7 @@ class Controller_utama extends Controller
 
     public function edit_dashboard($id_menu)
     {
+        $data_menu=Menu::find($id_menu)->first();
         return view('edit_dashboard');
     }
 

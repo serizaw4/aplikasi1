@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/input_menu', [Controller_utama::class,'input_menu']);
     Route::get('/hapus_menu/{id}', [Controller_utama::class,'hapus_menu']);
     Route::post('/edit_menu', [Controller_utama::class,'edit_menu']);
-    Route::get('/edit_dashboard{id}', [Controller_utama::class, 'edit_dashboard']);
+    Route::get('/edit_dashboard/{id}', [Controller_utama::class, 'edit_dashboard']);
 });
 
 Route::get('/', [Controller_utama::class,'tampilan_awal']);
