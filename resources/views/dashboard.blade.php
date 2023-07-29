@@ -221,7 +221,7 @@
             </div>
           </div> -->
 
-          <div class="col-lg-5 col-md-12">
+          <!-- <div class="col-lg-5 col-md-12">
             @if ($errors->has('message_success'))
   
               <div class="p-4 bg-success border border-success-subtle rounded-3" style="color:white">
@@ -242,7 +242,7 @@
               </div>
             @endif
 
-            <br>
+            <br> -->
 
             <!-- <form action="{{ url('/kirim_pesan') }}" method="post" role="form">
               @csrf

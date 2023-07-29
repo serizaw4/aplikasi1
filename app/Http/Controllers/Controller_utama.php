@@ -345,7 +345,17 @@ class Controller_utama extends Controller
 
     public function hapus_menu($id_menu)
     {
-        return $id_menu;
+        $hapus=Menu::where('id',$id_menu)->delete();
+
+        if($hapus){
+            return redirect('/dashboard')->withErrors([
+                'message_success'=>'Berhasil Dihapus'
+            ]);
+        }else{
+            return redirect('/dashboard')->withErrors([
+                'message'=> 'Gagal Dihapus'
+            ]);
+        }
     }
 
 }
