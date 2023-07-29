@@ -379,7 +379,21 @@ class Controller_utama extends Controller
     public function edit_dashboard($id_menu)
     {
         $data_menu=Menu::find($id_menu)->first();
-        return view('edit_dashboard');
+
+        $user_cek=Auth::user();
+        $get=Menu::all();
+    	if(!$user_cek){
+            return redirect('/login_page');
+        }else{
+            $foto='user_nw.png';
+            if(!empty($user_cek->foto)){
+                $foto=$user_cek->foto;
+            }
+        }    
+        return view('edit_dashboard')->with([
+            'foto' =>$foto,
+            'menu' =>$get
+        ]);
     }
 
 }
