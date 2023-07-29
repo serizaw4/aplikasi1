@@ -157,9 +157,9 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{{ asset('img/portfolio/'.$item->foto) }}" class="img-fluid" alt="">
+              <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h3><a href="{{ asset('img/portfolio/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
+                <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
                 <a href="{{ url('/hapus_menu/'.$item->id) }}"><button class="btn-danger">Hapus</button></a>
                 <a href="{{ url('/edit_dashboard/'.$item->id) }}"><button class="btn-danger">Edit</button></a>
                 <div>
