@@ -134,7 +134,7 @@
   </div>
 
   <div class="form-outline mb-4">
-  <img src="{{ asset('storage/menu/'.$data_menu->foto) }}" class="img-fluid" alt="">
+  <img src="{{ asset('storage/menu/'.$data_menu->foto) }}" class="img-fluid" alt="" width="100px">
     <label class="form-label" for="form2Example2">Foto</label>
     <input type="file" name="foto" id="form2Example2" class="form-control">
     
