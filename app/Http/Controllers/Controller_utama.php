@@ -360,20 +360,16 @@ class Controller_utama extends Controller
 
     public function edit_menu(Request $data)
     {
+        $update=[
+            'name'  => $data->nama,
+            'email' => $data->email
+        ];
+
         if($data->hasFile('foto')){
-        $edit=Menu::where('id',$id_menu)->update([
-            'name' => $data->nama,
-            'email' =>$data->email,
-            'foto' => $foto,
-        ]);
+                $update['foto'] = $foto;
         }
-        else{
-            $edit=Menu::where('id',$id_menu)->update([
-                'name' => $data->nama,
-                'email' =>$data->email,
-            ]);
-               
-        }
+
+        $edit=Menu::where('id',$id_menu)->update($update);
     }
 
     public function edit_dashboard($id_menu)
