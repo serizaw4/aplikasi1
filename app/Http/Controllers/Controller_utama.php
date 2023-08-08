@@ -381,7 +381,7 @@ class Controller_utama extends Controller
             $update['foto'] = $foto;
         }
 
-        $edit=Menu::where('id',$id_menu)->update($update);
+        $edit=Menu::where('id',$data->id)->update($update);
         if($edit){
             return redirect('/edit_dashboard')->withErrors([
                 'message_success'=>'Sukses'
