@@ -383,11 +383,11 @@ class Controller_utama extends Controller
 
         $edit=Menu::where('id',$data->id)->update($update);
         if($edit){
-            return redirect('/edit_dashboard')->withErrors([
+            return redirect('/dashboard')->withErrors([
                 'message_success'=>'Sukses'
             ]);
         }else{
-            return redirect('/edit_dashboard')->withErrors([
+            return redirect('/dashboard')->withErrors([
                 'message'=> 'Gagal'
             ]);
         }
