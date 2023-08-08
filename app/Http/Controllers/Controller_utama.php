@@ -378,7 +378,6 @@ class Controller_utama extends Controller
             $ext  = $data->foto->getClientOriginalExtension();
             $foto = $insert->id.'.'.$ext;
                 
-        }else{
             $update['foto'] = $foto;
         }
 
