@@ -365,22 +365,33 @@ class Controller_utama extends Controller
             'harga' => $data->harga,
         ];
 
-        $validator = Validator::make($data->all(),[
-            'foto'  => 'image|max:1000'
-        ]);
-        if($validator->fails()){      
-            return redirect('/edit_dashboard')->withErrors($validator->errors());
-        };
-
-        $ext  = $data->foto->getClientOriginalExtension();
-        $foto = $insert->id.'.'.$ext;
+        
 
         if($data->hasFile('foto')){
-                $update['foto'] = $foto;
+            $validator = Validator::make($data->all(),[
+                'foto'  => 'image|max:1000'
+            ]);
+            if($validator->fails()){      
+                return redirect('/edit_dashboard')->withErrors($validator->errors());
+            };
+    
+            $ext  = $data->foto->getClientOriginalExtension();
+            $foto = $insert->id.'.'.$ext;
+                
+        }else{
+            $update['foto'] = $foto;
         }
 
         $edit=Menu::where('id',$id_menu)->update($update);
-        return;
+        if($edit){
+            return redirect('/edit_dashboard')->withErrors([
+                'message_success'=>'Sukses'
+            ]);
+        }else{
+            return redirect('/edit_dashboard')->withErrors([
+                'message'=> 'Gagal'
+            ]);
+        }
     }
 
     public function edit_dashboard($id_menu)
