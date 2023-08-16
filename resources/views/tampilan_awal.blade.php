@@ -103,6 +103,15 @@
           </div>
         </div>
 
+        <form method="POST" action="{{ url('/pesan_menu' }}" enctype="multipart/form-data" >
+        <div class="form-outline mb-4">
+    <label class="form-label" for="form2Example2">Nama Pembeli</label>
+    <input type="text" name="nama" id="form2Example2" class="form-control">
+    
+  </div>
+
+  
+
         
 
 @foreach ($menu as $item)
@@ -113,7 +122,13 @@
               <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
+                
+            @csrf
+                <input type=hidden name="pesan" value="{{ $data_menu->id }}"> 
+                <button class="btn-danger">Pesan</button>
+                </form>
                 <div>
+                
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 
                 </div>

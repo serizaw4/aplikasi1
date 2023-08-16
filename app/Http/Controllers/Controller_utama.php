@@ -414,5 +414,18 @@ class Controller_utama extends Controller
         }    
     }
 
+    public function pesan_menu(Request $data)
+    {
+        
+        $simpan=Pemesanan::create([
+
+            'nama' => $data->nama,
+    		'pesanan' => $data->pesan,
+
+        ]);
+
+       
+    }
+
 }
 
