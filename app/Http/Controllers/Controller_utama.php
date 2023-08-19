@@ -439,6 +439,23 @@ class Controller_utama extends Controller
 
     public function pesanan()
     {
+        $user_cek=Auth::user();
+        $get=Menu::all();
+    	if(!$user_cek){
+            return redirect('/login_page');
+        }else{
+            $foto='user_nw.png';
+            if(!empty($user_cek->foto)){
+                $foto=$user_cek->foto;
+            }
+
+            return view('pesanan')->with([
+                'foto' =>$foto,
+                'menu' =>$get
+            ]);
+        }
+
+
         $pemesanan=Pemesanan::join('menus','pemesanans.id_menu','=','menus.id')
             ->get();
 

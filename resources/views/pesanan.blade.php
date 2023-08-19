@@ -55,7 +55,11 @@
           <li><a class="nav-link scrollto" href="#portfolio">Menu</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
           <li class="dropdown">
-            
+            <a href="#">
+              {{-- <img width="80px" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" class="rounded"> --}}
+              <img width="60px" src="{{ asset('/storage/user/'.$foto) }}" class="rounded">
+              <i class="bi bi-chevron-down"></i>
+          </a>
             <ul>
               <li><a href="profile">Edit Profile</a></li>
               <li><a href="{{ url('/password') }}">Ganti Password</a></li>
@@ -80,39 +84,20 @@
 
   <main id="main">
 
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      
-    </tr>
-  </tbody>
-</table>
-
-
     
 
-    
+    <!-- ======= Our Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
 
-        
+        <!-- <div class="section-title">
+          <h3><b>Our Menu</b></h3>
+        </div> -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">Menu</li>
 
               @if ($errors->has('message_success'))
   
@@ -134,7 +119,48 @@
   </div>
   @endif
 
-  
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+</div>  
+              
+            </ul>
+          </div>
+        </div>
+        
+              
 
       </div>
     </section><!-- End Our Portfolio Section -->
