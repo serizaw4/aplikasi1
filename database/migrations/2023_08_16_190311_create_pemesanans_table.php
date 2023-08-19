@@ -16,7 +16,7 @@ class CreatePemesanansTable extends Migration
         Schema::create('pemesanans', function (Blueprint $table) {
             $table->id();
             $table->text('nama');
-            $table->text('pesanan');
+            
             $table->foreignId('id_menu')->constrained('menus')->onDelete('cascade');
             $table->timestamps();
         });

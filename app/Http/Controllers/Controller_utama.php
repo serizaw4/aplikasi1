@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Menu;
+use App\Models\Pemesanan;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -420,11 +421,31 @@ class Controller_utama extends Controller
         $simpan=Pemesanan::create([
 
             'nama' => $data->nama,
-    		'pesanan' => $data->pesan,
+    		'id_menu' => $data->pesan,
 
         ]);
 
+        if($simpan){
+            return redirect('/tampilan_awal')->withErrors([
+                'message_success'=>'Berhasil'
+            ]);
+        }else{
+            return redirect('/tampilan_awal')->withErrors([
+                'message'=> 'Gagal'
+            ]);
+        }
        
+    }
+
+    public function pesanan()
+    {
+        $pemesanan=Pemesanan::join('menus','pemesanans.id_menu','=','menus.id')
+            ->get();
+
+        return view('pesanan')->with([
+
+            'pesan' => $pemesanan
+        ]);
     }
 
 }

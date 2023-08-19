@@ -47,7 +47,7 @@
         <h1><a href="index.html">Geprek</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      <!-- </div>
+      </div>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -55,11 +55,7 @@
           <li><a class="nav-link scrollto" href="#portfolio">Menu</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
           <li class="dropdown">
-            <a href="#">
-              {{-- <img width="80px" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" class="rounded"> --}}
-              <img width="60px" src="{{ asset('/storage/user/'.$foto) }}" class="rounded">
-              <i class="bi bi-chevron-down"></i>
-          </a>
+            
             <ul>
               <li><a href="profile">Edit Profile</a></li>
               <li><a href="{{ url('/password') }}">Ganti Password</a></li>
@@ -68,96 +64,77 @@
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>.navbar
+      </nav><!-- .navbar -->
 
-    </div> -->
+    </div>
   </header><!-- End #header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
+  <!-- <section id="hero">
     <div class="hero-container">
       <h1><b>Ayam Geprek</b></h1>
-      <h2><b>Ayam geprek nomor 1 Surabaya</b></h2>
+      <h2><b>Ayam geprek nomor 1 Surabaya</b></h2> -->
       <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
-    </div>
-  </section><!-- #hero -->
+    <!-- </div>
+</section> -->
 
   <main id="main">
 
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      
+    </tr>
+  </tbody>
+</table>
+
+
     
 
-    <!-- ======= Our Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <h3><b>Our Menu</b></h3>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Menu</li>
-              
-            </ul>
-          </div>
-        </div>
-
-        @if ($errors->has('message_success'))
-  
-              <div class="p-4 bg-success border border-success-subtle rounded-3" style="color:white">
-            
-                  <strong>{{ $errors->first('message_success') }}</strong>
-                
-            
-              </div>
-            @endif
-          
-            @if ($errors->has('message'))
-          
-              <div class="p-4 bg-danger border border-danger-subtle rounded-3">
-            
-                  <strong>{{ $errors->first('message') }}</strong>
-                
-            
-              </div>
-            @endif
-
-        <form method="POST" action="{{ url('/pesan_menu' )}}" enctype="multipart/form-data" >
-        <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example2">Nama Pembeli</label>
-    <input type="text" name="nama" id="form2Example2" class="form-control">
     
-  </div>
-
-  
 
         
 
-@foreach ($menu as $item)
-        <div class="row portfolio-container">
+              @if ($errors->has('message_success'))
+  
+  <div class="p-4 bg-success border border-success-subtle rounded-3">
+  
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
-                
-            @csrf
-                <input type=hidden name="pesan" value="{{ $item->id }}"> 
-                <button class="btn-danger">Pesan</button>
-                </form>
-                <div>
-                
-                  <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
-                
-                </div>
-              </div>
-            </div>
-          </div>
+    <strong>{{ $errors->first('message_success') }}</strong>
 
-@endforeach          
-              
+  </div>
+  @endif
+
+  @if ($errors->has('message'))
+  
+  <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+  
+
+    <strong>{{ $errors->first('message') }}</strong>
+
+  </div>
+  @endif
+
+  
 
       </div>
     </section><!-- End Our Portfolio Section -->
@@ -165,7 +142,7 @@
     
 
     <!-- ======= Contact Us Section ======= -->
-    <section id="contact" class="contact section-bg">
+    <!-- <section id="contact" class="contact section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -206,14 +183,32 @@
               </div>
 
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-lg-5 col-md-12">
+          <!-- <div class="col-lg-5 col-md-12">
+            @if ($errors->has('message_success'))
+  
+              <div class="p-4 bg-success border border-success-subtle rounded-3" style="color:white">
             
+                  <strong>{{ $errors->first('message_success') }}</strong>
+                
+            
+              </div>
+            @endif
+          
+            @if ($errors->has('message'))
+          
+              <div class="p-4 bg-danger border border-danger-subtle rounded-3">
+            
+                  <strong>{{ $errors->first('message') }}</strong>
+                
+            
+              </div>
+            @endif
 
-            <br>
+            <br> -->
 
-            <form action="{{ url('/kirim_pesan') }}" method="post" role="form">
+            <!-- <form action="{{ url('/kirim_pesan') }}" method="post" role="form">
               @csrf
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -230,7 +225,7 @@
               <br>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-          </div>
+          </div> -->
 
         </div>
 
@@ -238,9 +233,9 @@
     </section><!-- End Contact Us Section -->
 
     <!-- ======= Map Section ======= -->
-    <section class="map">
+    <!-- <section class="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s150%20Park%20Row%2C%20New%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sbg!4v1579767901424!5m2!1sen!2sbg" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </section><!-- End Map Section -->
+    </section> -->
 
   </main><!-- End #main -->
 
