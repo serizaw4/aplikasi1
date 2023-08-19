@@ -445,8 +445,13 @@ class Controller_utama extends Controller
             return redirect('/login_page');
         }else{
 
-            $pemesanan=Pemesanan::join('menus','pemesanans.id_menu','=','menus.id')
-            ->get();
+            $pemesanan=Pemesanan::select(
+                    'pemesanans.id',
+                    'pemesanans.nama as nama_pembeli',
+                    'menus.nama as nama_menu',
+                )
+                ->join('menus','pemesanans.id_menu','=','menus.id')
+                ->get();
 
             $foto='user_nw.png';
             if(!empty($user_cek->foto)){

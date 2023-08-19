@@ -108,8 +108,8 @@
                 @foreach ($pesan as $item)
                 <tr>
                   <th scope="row">1</th>
-                  <th scope="row" >{{ $item->nama }}</th>
-                  <th scope="row" >{{ $item->id_menu }}</th>
+                  <th scope="row" >{{ $item->nama_pembeli }}</th>
+                  <!-- <th scope="row" >{{ $item->id_menu }}</th> -->
                   
                 </tr>
                 @endforeach
