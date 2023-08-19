@@ -51,9 +51,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Menu</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+          <li><a class="nav-link scrollto active" href="{{ url('/tampilan_awal') }}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/tampilan_awal') }}">Menu</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/pesanan') }}">Pesanan</a></li>
           <li class="dropdown">
             <a href="#">
               {{-- <img width="80px" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" class="rounded"> --}}
@@ -61,7 +61,7 @@
               <i class="bi bi-chevron-down"></i>
           </a>
             <ul>
-              <li><a href="profile">Edit Profile</a></li>
+              <li><a href="{{ url('/profile') }}">Edit Profile</a></li>
               <li><a href="{{ url('/password') }}">Ganti Password</a></li>
               <li><a href="{{ url('/logout') }}">Log Out</a></li>
             </ul>
@@ -98,18 +98,18 @@
               <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nama Pembeli</th>
+                  <th scope="col">Nama Menu</th>
+                  
                 </tr>
               </thead>
               <tbody>
                 @foreach ($pesan as $item)
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row">{{ $item->id }}</th>
                   <th scope="row" >{{ $item->nama_pembeli }}</th>
-                  <!-- <th scope="row" >{{ $item->id_menu }}</th> -->
+                  <th scope="row" >{{ $item->nama_menu }}</th>
                   
                 </tr>
                 @endforeach

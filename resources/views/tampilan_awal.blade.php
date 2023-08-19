@@ -43,34 +43,18 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <div class="logo me-auto">
+      
+        
+        <div class="logo me-auto">
         <h1><a href="index.html">Geprek</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      <!-- </div>
+      </div>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Menu</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="#">
-              {{-- <img width="80px" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" class="rounded"> --}}
-              <img width="60px" src="{{ asset('/storage/user/'.$foto) }}" class="rounded">
-              <i class="bi bi-chevron-down"></i>
-          </a>
-            <ul>
-              <li><a href="profile">Edit Profile</a></li>
-              <li><a href="{{ url('/password') }}">Ganti Password</a></li>
-              <li><a href="{{ url('/logout') }}">Log Out</a></li>
-            </ul>
-          </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>.navbar
+      
+      
 
-    </div> -->
+    </div> 
   </header><!-- End #header -->
 
   <!-- ======= Hero Section ======= -->
