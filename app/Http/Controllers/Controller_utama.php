@@ -372,14 +372,16 @@ class Controller_utama extends Controller
 
         if($data->hasFile('foto')){
             $validator = Validator::make($data->all(),[
-                'foto'  => 'image|max:1000'
+                'foto'  => 'image|max:3000'
             ]);
             if($validator->fails()){      
-                return redirect('/edit_dashboard')->withErrors($validator->errors());
+                return redirect('/edit_dashboard/'.$data->id)->withErrors($validator->errors());
             };
     
             $ext  = $data->foto->getClientOriginalExtension();
-            $foto = $insert->id.'.'.$ext;
+            $foto = $data->id.'.'.$ext;
+
+            Image::make($data->file('foto'))->save(public_path('/storage/menu').'/'.$foto);
                 
             $update['foto'] = $foto;
         }
