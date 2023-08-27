@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Image;
 
 class Controller_utama extends Controller
 {
@@ -320,9 +321,10 @@ class Controller_utama extends Controller
                 };
         
                 $ext  = $data->foto->getClientOriginalExtension();
-                $foto = $user_cek->id.'.'.strtotime(Carbon::now()).$ext;
-    
-                $data->foto->storeAs('public/menu', $foto);
+                $foto = $user_cek->id.strtotime(Carbon::now()).'.'.$ext;
+                
+                // $data->foto->storeAs('public/menu', $foto);
+                Image::make($data->file('foto'))->save(public_path('/storage/menu').'/'.$foto);
         }
 
         $insert=Menu::create([
