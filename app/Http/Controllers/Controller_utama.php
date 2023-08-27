@@ -401,7 +401,7 @@ class Controller_utama extends Controller
 
     public function edit_dashboard($id_menu)
     {
-        $data_menu=Menu::find($id_menu)->first();
+        $data_menu=Menu::find($id_menu);
 
         $user_cek=Auth::user();
         $get=Menu::all();
