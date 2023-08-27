@@ -382,6 +382,7 @@ class Controller_utama extends Controller
             $foto = $data->id.'.'.$ext;
 
             Image::make($data->file('foto'))->save(public_path('/storage/menu').'/'.$foto);
+            
                 
             $update['foto'] = $foto;
         }
