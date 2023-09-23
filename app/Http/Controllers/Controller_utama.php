@@ -285,11 +285,21 @@ class Controller_utama extends Controller
         $get=Menu::all();
     	
             $foto='user_nw.png';
+
+            $pemesanan=Pemesanan::select(
+                'pemesanans.id',
+                'pemesanans.nama as nama_pembeli',
+                'menus.nama as nama_menu',
+                'pemesanans.status as status'
+            )
+            ->join('menus','pemesanans.id_menu','=','menus.id')
+            ->get();
             
 
             return view('tampilan_awal')->with([
                 'foto' =>$foto,
-                'menu' =>$get
+                'menu' =>$get,
+                'pesan' =>$pemesanan
             ]);
         
 
