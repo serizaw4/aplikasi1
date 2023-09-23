@@ -114,7 +114,7 @@
                   <th scope="row" >{{ $item->nama_menu }}</th>
                   <th scope="row" >
                     @if ($item->status == 0)
-                    <a href="{{ url('/update_status/'.$item->id') }}"><button type="button" class="btn btn-primary">Pesanan siap</button></a>
+                    <a href="{{ url('/update_status/'.$item->id) }}"><button type="button" class="btn btn-primary">Pesanan siap</button></a>
                     @endif
                   </th>
                   <th scope="row" >
