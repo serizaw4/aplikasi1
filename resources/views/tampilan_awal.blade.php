@@ -78,10 +78,31 @@
           <h3><b>Status Pesanan</b></h3>
         </div>
 
-        <div class="row">
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active"></li>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nama Pembeli</th>
+              <th scope="col">Nama Menu</th>
+              <th scope="col">Status</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($pesan as $item)
+            <tr>
+              <th scope="row">{{ $item->id }}</th>
+              <th scope="row" >{{ $item->nama_pembeli }}</th>
+              <th scope="row" >{{ $item->nama_menu }}</th>
+
+                
+            </tr>
+            @endforeach
+            
+          </tbody>
+        </table>
+
+        
 
               
               
