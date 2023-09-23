@@ -75,17 +75,21 @@
       <div class="container">
 
         <div class="section-title">
-          <h3><b>Our Menu</b></h3>
+          <h3><b>Status Pesanan</b></h3>
         </div>
 
         <div class="row">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Menu</li>
+              <li data-filter="*" class="filter-active"></li>
+
+              
               
             </ul>
           </div>
         </div>
+
+        
 
         @if ($errors->has('message_success'))
   

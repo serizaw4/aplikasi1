@@ -101,6 +101,7 @@
                   <th scope="col">Id</th>
                   <th scope="col">Nama Pembeli</th>
                   <th scope="col">Nama Menu</th>
+                  <th scope="col">Status</th>
                   
                 </tr>
               </thead>
@@ -110,6 +111,7 @@
                   <th scope="row">{{ $item->id }}</th>
                   <th scope="row" >{{ $item->nama_pembeli }}</th>
                   <th scope="row" >{{ $item->nama_menu }}</th>
+                  <th scope="row" >{{ $item->status }}</th>
                   
                 </tr>
                 @endforeach

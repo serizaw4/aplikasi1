@@ -454,6 +454,7 @@ class Controller_utama extends Controller
                     'pemesanans.id',
                     'pemesanans.nama as nama_pembeli',
                     'menus.nama as nama_menu',
+                    'pemesanans.status as status'
                 )
                 ->join('menus','pemesanans.id_menu','=','menus.id')
                 ->get();
