@@ -486,7 +486,9 @@ class Controller_utama extends Controller
 
     public function update_status($id_pesanan)
     {
-        $update=Menu::where('id',$id_pesanan)->update();
+        $update=Menu::where('id',$id_pesanan)->update([
+            'status' => 1
+        ]);
 
         if($update){
             return redirect('/dashboard')->withErrors([
