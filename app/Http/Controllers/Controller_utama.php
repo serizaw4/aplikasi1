@@ -484,5 +484,20 @@ class Controller_utama extends Controller
 
     }
 
+    public function update_status($id_pesanan)
+    {
+        $update=Menu::where('id',$id_pesanan)->update();
+
+        if($update){
+            return redirect('/dashboard')->withErrors([
+                'message_success'=>'Berhasil Dihapus'
+            ]);
+        }else{
+            return redirect('/dashboard')->withErrors([
+                'message'=> 'Gagal Dihapus'
+            ]);
+        }
+    }
+
 }
 
