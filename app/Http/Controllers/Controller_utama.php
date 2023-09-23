@@ -474,28 +474,5 @@ class Controller_utama extends Controller
 
     }
 
-    public function tampilan_awal()
-    {
-        
-
-            $pemesanan=Pemesanan::select(
-                    'pemesanans.id',
-                    'pemesanans.nama as nama_pembeli',
-                    'pemesanans.status as status'
-                )
-                ->join('menus','pemesanans.id_menu','=','menus.id')
-                ->get();
-
-            
-
-            return view('tampilan_awal')->with([
-                'foto' =>$foto,
-                'menu' =>$get,
-                'pesan' => $pemesanan
-            ]);
-        }
-
-    }
-
-
+}
 
