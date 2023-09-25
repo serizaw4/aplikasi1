@@ -26,6 +26,10 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<!-- Demo CSS (No need to include it into your project) -->
+	<link rel="stylesheet" href="{{ asset('css/demo.css') }}">
+
   <!-- =======================================================
   * Template Name: Amoeba
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -153,7 +157,9 @@
 
   
 
-  <div id="market">      
+  <div id="market"> 
+    
+  
 
 @foreach ($menu as $item)
 
@@ -192,6 +198,17 @@
       </div>
     </section><!-- End Our Portfolio Section -->
 
+    <div id="tray">
+  <div class="count">
+
+    </div>
+<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+ </div>
+
+</div>
+</div>
+
+ 
     
 
     <!-- ======= Contact Us Section ======= -->
@@ -292,6 +309,9 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('js/main.js') }}"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+ <script  src="{{ asset('/js/script.js') }}"></script>
 
 </body>
 
