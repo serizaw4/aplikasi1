@@ -155,6 +155,26 @@
     
   </div>
 
+  <div class="app">
+<div class="closewindow">
+<span>x</span>
+</div>
+ 	<h2>Cart Details</h2>
+     	<i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
+    <p>You have choose the following items.</p>
+  <div class="tooltipshop">Не вписан артикул</div>
+  <div class="tooltipshop2">Выберите товар</div>
+ 	<div class="app-body">
+ 		<ul class="list"> 			
+ 		</ul>
+ 	</div>
+    <div class="openpopup">
+Check out
+</div>
+ <div class="openpopup2">
+Clear Cart
+</div>
+ </div>
   
 
   <div id="market"> 
@@ -198,15 +218,7 @@
       </div>
     </section><!-- End Our Portfolio Section -->
 
-    <div id="tray">
-  <div class="count">
-
-    </div>
-<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
- </div>
-
-</div>
-</div>
+    
 
  
     
@@ -256,6 +268,8 @@
           </div>
 
           <div class="col-lg-5 col-md-12">
+
+
             
 
             <br>
@@ -283,6 +297,16 @@
 
       </div>
     </section><!-- End Contact Us Section -->
+
+    <div id="tray">
+  <div class="count">
+
+    </div>
+<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+ </div>
+
+</div>
+</div>
 
     <!-- ======= Map Section ======= -->
     <section class="map">
