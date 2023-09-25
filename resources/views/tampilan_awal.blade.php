@@ -27,8 +27,8 @@
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<!-- Demo CSS (No need to include it into your project) -->
-	<link rel="stylesheet" href="{{ asset('css/demo.css') }}">
+  <!-- Demo CSS (No need to include it into your project) -->
+  <link rel="stylesheet" href="{{ asset('css/demo.css') }}">
 
   <!-- =======================================================
   * Template Name: Amoeba
@@ -155,26 +155,7 @@
     
   </div>
 
-  <div class="app">
-<div class="closewindow">
-<span>x</span>
-</div>
- 	<h2>Cart Details</h2>
-     	<i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
-    <p>You have choose the following items.</p>
-  <div class="tooltipshop">Не вписан артикул</div>
-  <div class="tooltipshop2">Выберите товар</div>
- 	<div class="app-body">
- 		<ul class="list"> 			
- 		</ul>
- 	</div>
-    <div class="openpopup">
-Check out
-</div>
- <div class="openpopup2">
-Clear Cart
-</div>
- </div>
+  
   
 
   <div id="market"> 
@@ -194,7 +175,7 @@ Clear Cart
   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
     <div class="portfolio-wrap">
       <div class="items">
-      <input type="hidden" name="menu[]" value="{{ $item->id }}"><img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
+      <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
       </div>
       <div class="portfolio-info">
         <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
@@ -204,7 +185,7 @@ Clear Cart
                 <!-- <input type=hidden name="pesan" value="{{ $item->id }}">  -->
                 <!-- <button class="btn-danger">Pesan</button> -->
               <!-- </div> -->
-                </form>
+                
                 <div>
                 
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
@@ -214,7 +195,31 @@ Clear Cart
             </div>
           </div>
 
-@endforeach          
+@endforeach   
+
+<div class="app">
+<div class="closewindow">
+<span>x</span>
+</div>
+  <h2>Cart Details</h2>
+      <i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
+    <p>You have choose the following items.</p>
+  <div class="tooltipshop">Не вписан артикул</div>
+  <div class="tooltipshop2">Выберите товар</div>
+  <div class="app-body">
+    <ul class="list">       
+    </ul>
+  </div>
+    <div class="openpopup">
+<button type="submit" class="btn btn-primary btn-block mb-4">Check out</button>
+</div>
+ <div class="openpopup2">
+Clear Cart
+</div>
+ </div>
+
+ </form>
+
               
 
       </div>
@@ -342,3 +347,4 @@ Clear Cart
 </body>
 
 </html>
+
