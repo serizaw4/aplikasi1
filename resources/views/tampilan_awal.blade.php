@@ -193,15 +193,17 @@ Clear Cart
   
   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
     <div class="portfolio-wrap">
+      <div class="items">
       <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
+      </div>
       <div class="portfolio-info">
         <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
         
         @csrf
-              <div class="items product">
-                <input type=hidden name="pesan" value="{{ $item->id }}"> 
-                <button class="btn-danger">Pesan</button>
-              </div>
+              <!-- <div class="items product"> -->
+                <!-- <input type=hidden name="pesan" value="{{ $item->id }}">  -->
+                <!-- <button class="btn-danger">Pesan</button> -->
+              <!-- </div> -->
                 </form>
                 <div>
                 

@@ -1226,19 +1226,19 @@ button:focus {
 }
 
 .items{
-background-color: rgba(255, 255, 255, 0.8);
+/* background-color: rgba(255, 255, 255, 0.8);
 border-radius: 5px;
 width: 250px;
 height: 250px;
 text-align: center;
 padding: 60px 0;
-margin: 5px;
-display: inline-block;
+margin: 5px; */
+/* display: inline-block;
     border: 1px solid #ddd;
-    vertical-align: middle;
+    vertical-align: middle; */
 }
 .items img{
-    width: 50%;
+    /* width: 50%; */
 }
 
 .items:hover {
