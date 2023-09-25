@@ -159,23 +159,25 @@
 
 
      
-<div class="items product">
-         <img src="{{ asset('storage/menu/'.$item->foto) }}">
-     </div>
+<!-- <div class="items product">
+  <img src="{{ asset('storage/menu/'.$item->foto) }}">
+</div> -->
 
-        <div class="row portfolio-container">
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3> -->
-                
-            @csrf
-                <!-- <input type=hidden name="pesan" value="{{ $item->id }}"> 
+<div class="row portfolio-container">
+  
+  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    <div class="portfolio-wrap">
+      <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
+      <div class="portfolio-info">
+        <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
+        
+        @csrf
+              <div class="items product">
+                <input type=hidden name="pesan" value="{{ $item->id }}"> 
                 <button class="btn-danger">Pesan</button>
+              </div>
                 </form>
-                <div> -->
+                <div>
                 
                   <!-- <a href="{{ asset('img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a> -->
                 
