@@ -194,7 +194,7 @@ Clear Cart
   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
     <div class="portfolio-wrap">
       <div class="items">
-      <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
+      <input type="hidden" name="menu[]" value="{{ $item->id }}"><img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
       </div>
       <div class="portfolio-info">
         <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
