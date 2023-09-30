@@ -175,6 +175,7 @@
   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
     <div class="portfolio-wrap">
       <div class="items">
+        <input type=hidden value="{{ $item->id }}">
       <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
       </div>
       <div class="portfolio-info">
