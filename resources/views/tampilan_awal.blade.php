@@ -148,7 +148,6 @@
               </div>
             @endif
 
-        <form method="POST" action="{{ url('/pesan_menu' )}}" enctype="multipart/form-data" >
         <div class="form-outline mb-4">
     <label class="form-label" for="form2Example2">Nama Pembeli</label>
     <input type="text" name="nama" id="form2Example2" class="form-control">
@@ -175,13 +174,12 @@
   <div class="col-lg-4 col-md-6 portfolio-item filter-app">
     <div class="portfolio-wrap">
       <div class="items">
-        <input type=hidden value="{{ $item->id }}">
+        <input name="pesan[]" type=hidden value="{{ $item->id }}">
       <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
       </div>
       <div class="portfolio-info">
         <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
         
-        @csrf
               <!-- <div class="items product"> -->
                 <!-- <input type=hidden name="pesan" value="{{ $item->id }}">  -->
                 <!-- <button class="btn-danger">Pesan</button> -->
@@ -196,7 +194,9 @@
             </div>
           </div>
 
-@endforeach   
+@endforeach  
+        <form method="POST" action="{{ url('/pesan_menu' )}}" enctype="multipart/form-data" >
+        @csrf 
 
 <div class="app">
 <div class="closewindow">
