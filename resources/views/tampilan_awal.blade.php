@@ -204,7 +204,7 @@
 </div>
   <h2>Cart Details</h2>
       <i class="fa fa-shopping-basket fa-3x" aria-hidden="true"></i>
-      <div class="form-outline mb-4">
+      <div class="form-outline mb-4" style="padding-left:10px;padding-right:10px">
     <label class="form-label" for="form2Example2">Nama Pembeli</label>
     <input type="text" name="nama" id="form2Example2" class="form-control">
     
