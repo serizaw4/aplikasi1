@@ -142,15 +142,14 @@
           
               <div class="p-4 bg-danger border border-danger-subtle rounded-3">
             
-                  <strong>{{ $errors->first('message') }}</strong>
+                  <strong style="color:black">{{ $errors->first('message') }}</strong>
                 
             
               </div>
             @endif
 
         <div class="form-outline mb-4">
-    <label class="form-label" for="form2Example2">Nama Pembeli</label>
-    <input type="text" name="nama" id="form2Example2" class="form-control">
+   
     
   </div>
 
@@ -210,8 +209,8 @@
     
   </div>
     
-  <div class="tooltipshop">Не вписан артикул</div>
-  <div class="tooltipshop2">Выберите товар</div>
+  <!-- <div class="tooltipshop">Не вписан артикул</div>
+  <div class="tooltipshop2">Выберите товар</div> -->
   <div class="app-body">
     <ul class="list">       
     </ul>

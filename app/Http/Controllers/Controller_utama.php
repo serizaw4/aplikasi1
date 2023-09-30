@@ -433,7 +433,9 @@ class Controller_utama extends Controller
     public function pesan_menu(Request $data)
     {
         if(!isset($data->pesan)){
-            return 1;
+            return redirect('/tampilan_awal')->withErrors([
+                'message'=> 'Pesanan Kosong'
+            ]);
         }
         foreach ($data->pesan as $key) {
             $simpan=Pemesanan::create([
