@@ -211,7 +211,7 @@
     </ul>
   </div>
     <div class="openpopup">
-<button type="submit" class="btn btn-primary btn-block mb-4">Check out</button>
+<button type="submit" class="btn btn-primary">Check out</button>
 </div>
  <div class="openpopup2">
 Clear Cart
@@ -223,8 +223,15 @@ Clear Cart
               
 
       </div>
+      
     </section><!-- End Our Portfolio Section -->
 
+    <div id="tray">
+  <div class="count">
+
+    </div>
+<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+ </div>
     
 
  
@@ -305,12 +312,6 @@ Clear Cart
       </div>
     </section><!-- End Contact Us Section -->
 
-    <div id="tray">
-  <div class="count">
-
-    </div>
-<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
- </div>
 
 </div>
 </div>

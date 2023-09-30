@@ -1164,7 +1164,7 @@ h2 {
 
 
 
-button {
+/* button {
 	font-weight: 300;
 	margin: 20px 0;
 	line-height: 2.5rem;	
@@ -1174,7 +1174,7 @@ button {
 	border: none;
 	color: #ffffff;	
 	border-radius: 50%;
-}
+} */
 
 #send {
 	font-weight: 300;
@@ -1361,7 +1361,7 @@ border-radius:50%;
 text-align:center;
 cursor:pointer;
 transition-duration:0.5s;
-position: absolute;
+/* position: absolute; */
 left: 25px;
 bottom: 25px;
 box-shadow: 0 0 10px rgba(0,0,0,0.5);
