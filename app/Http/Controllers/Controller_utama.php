@@ -432,6 +432,9 @@ class Controller_utama extends Controller
 
     public function pesan_menu(Request $data)
     {
+        if(!isset($data->pesan)){
+            return 1;
+        }
         foreach ($data->pesan as $key) {
             $simpan=Pemesanan::create([
                 'nama' => $data->nama,
