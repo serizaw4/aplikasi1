@@ -120,7 +120,7 @@
                     @if ($item->status == 1)
                     <a href="{{ url('/ambil_pesan/'.$item->id) }}"><button type="button" class="btn btn-primary">Pesanan sudah diambil</button></a>
                     @endif
-
+                    
                   </th>
                   <th scope="row" >
                     @if ($item->status == 0)
@@ -131,6 +131,7 @@
                     <div class="alert alert-primary" role="alert">
                       Pesanan Ready
                     </div>
+                    @endif
 
                     
                   </th>
