@@ -293,6 +293,7 @@ class Controller_utama extends Controller
                 'pemesanans.status as status'
             )
             ->join('menus','pemesanans.id_menu','=','menus.id')
+            ->where('pemesanans.status','!=','2')
             ->get();
             
 
@@ -472,7 +473,7 @@ class Controller_utama extends Controller
                     'pemesanans.status as status'
                 )
                 ->join('menus','pemesanans.id_menu','=','menus.id')
-                ->where('pemesanans.status','!=',2)
+                ->where('pemesanans.status','!=','2')
                 ->get();
 
             $foto='user_nw.png';

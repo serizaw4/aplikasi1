@@ -131,6 +131,11 @@
                     <div class="alert alert-primary" role="alert">
                       Pesanan Ready
                     </div>
+
+                    @if ($item->status == 2)
+                    <div class="alert alert-primary" role="alert">
+                      Pesanan sudah diambil
+                    </div>
                         
                     @endif
                   </th>
