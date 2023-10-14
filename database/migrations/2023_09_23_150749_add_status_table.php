@@ -14,7 +14,7 @@ class AddStatusTable extends Migration
     public function up()
     {
         Schema::table('pemesanans', function (Blueprint $table) {
-            $table->enum('status',['0','1'])->default('0');
+            $table->enum('status',['0','1','2'])->default('0');
         });
     }
 
@@ -25,6 +25,8 @@ class AddStatusTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('pemesanans', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 }

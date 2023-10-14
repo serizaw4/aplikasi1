@@ -472,6 +472,7 @@ class Controller_utama extends Controller
                     'pemesanans.status as status'
                 )
                 ->join('menus','pemesanans.id_menu','=','menus.id')
+                ->where('pemesanans.status','!=',2)
                 ->get();
 
             $foto='user_nw.png';
@@ -507,11 +508,11 @@ class Controller_utama extends Controller
 
     public function ambil_pesan($id_pesan)
     {
-        $hapus=Pemesanan::where('id',$id_pesan)->delete([
-            
+        $update=Pemesanan::where('id',$id_pesan)->update([
+            'status' => '2'
         ]);
 
-        if($hapus){
+        if($update){
             return redirect('/pesanan')->withErrors([
                 'message_success'=>'Berhasil Dihapus'
             ]);
