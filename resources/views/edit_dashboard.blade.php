@@ -51,7 +51,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{{ url('/tampilan_awal') }}">Home</a></li>
+          <li><a class="nav-link scrollto active" href="{{ url('/dashboard') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ url('/tampilan_awal') }}">Menu</a></li>
           <li><a class="nav-link scrollto" href="{{ url('/pesanan') }}">Pesanan</a></li>
           <li class="dropdown">
