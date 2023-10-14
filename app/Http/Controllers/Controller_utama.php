@@ -505,5 +505,22 @@ class Controller_utama extends Controller
         }
     }
 
+    public function ambil_pesan($id_pesan)
+    {
+        $hapus=Pemesanan::where('id',$id_pesan)->delete([
+            
+        ]);
+
+        if($hapus){
+            return redirect('/pesanan')->withErrors([
+                'message_success'=>'Berhasil Dihapus'
+            ]);
+        }else{
+            return redirect('/pesanan')->withErrors([
+                'message'=> 'Gagal Dihapus'
+            ]);
+        }
+    }
+
 }
 

@@ -116,6 +116,11 @@
                     @if ($item->status == 0)
                     <a href="{{ url('/update_status/'.$item->id) }}"><button type="button" class="btn btn-primary">Pesanan siap</button></a>
                     @endif
+
+                    @if ($item->status == 1)
+                    <a href="{{ url('/ambil_pesan/'.$item->id) }}"><button type="button" class="btn btn-primary">Pesanan sudah diambil</button></a>
+                    @endif
+
                   </th>
                   <th scope="row" >
                     @if ($item->status == 0)

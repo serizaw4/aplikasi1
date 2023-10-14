@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/edit_dashboard/{id}', [Controller_utama::class, 'edit_dashboard']);
     Route::get('/pesanan',[Controller_utama::class,'pesanan']);
     Route::get('/update_status/{id}',[Controller_utama::class,'update_status']);
+    Route::get('/ambil_pesan/{id}',[Controller_utama::class,'ambil_pesan']);
 });
 
 Route::get('/', [Controller_utama::class,'tampilan_awal']);
