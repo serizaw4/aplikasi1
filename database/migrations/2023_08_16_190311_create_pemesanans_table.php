@@ -29,6 +29,8 @@ class CreatePemesanansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemesanans');
+        Schema::table('pemesanans', function (Blueprint $table) {
+            $table->dropColumn('id_menu');
+        });
     }
 }
