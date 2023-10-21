@@ -439,9 +439,11 @@ class Controller_utama extends Controller
                 'message'=> 'Pesanan Kosong'
             ]);
         }
+        $simpan=Pemesanan::create([]);
         foreach ($data->pesan as $key) {
-            $simpan=Pemesanan::create([
-                'nama' => $data->nama,
+            Pemesanan::create([
+                // 'nama' => $data->nama,
+                'id_pemesanan' => $simpan->id,
                 'id_menu' => $key,
             ]);
         }
