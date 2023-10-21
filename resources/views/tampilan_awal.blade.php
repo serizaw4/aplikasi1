@@ -99,7 +99,7 @@
               <th scope="row" >{{ $item->nama_pembeli }}</th>
               <th scope="row" >
                 @foreach ($item->menu as $menus)
-                  {{ $menus->nama }}
+                  <li>{{ $menus->nama }}</li>
                 @endforeach
               </th>
               <th scope="row" >

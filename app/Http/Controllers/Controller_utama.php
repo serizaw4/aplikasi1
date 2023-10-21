@@ -484,6 +484,15 @@ class Controller_utama extends Controller
                 ->where('pemesanans.status','!=','2')
                 ->get();
 
+                foreach ($pemesanan as $key) {
+                    $key['menu']=Pemesanan_detail::select(
+                        'pemesanan_details.id',
+                        'menus.nama'
+                    )
+                    ->join('menus','pemesanan_details.id_menu','=','menus.id')
+                    ->get();
+                }
+
             $foto='user_nw.png';
             if(!empty($user_cek->foto)){
                 $foto=$user_cek->foto;

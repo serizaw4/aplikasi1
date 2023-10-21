@@ -111,7 +111,13 @@
                 <tr>
                   <th scope="row">{{ $item->id }}</th>
                   <th scope="row" >{{ $item->nama_pembeli }}</th>
-                  <th scope="row" >{{ $item->nama_menu }}</th>
+                  <th scope="row" >
+                <ul>
+                @foreach ($item->menu as $menus)
+                  <li>{{ $menus->nama }}</li>
+                @endforeach
+                </ul>
+              </th>
                   <th scope="row" >
                     @if ($item->status == 0)
                     <a href="{{ url('/update_status/'.$item->id) }}"><button type="button" class="btn btn-primary">Pesanan siap</button></a>
