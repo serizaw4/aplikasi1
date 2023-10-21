@@ -295,6 +295,10 @@ class Controller_utama extends Controller
             ->where('pemesanans.status','!=','2')
             ->get();
             
+            // foreach ($pemesanan as $key) {
+            //     $key['menu']=Pemesanan_detail::select()->join()->get();
+            // }
+
 
             return view('tampilan_awal')->with([
                 'foto' =>$foto,
