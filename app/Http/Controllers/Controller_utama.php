@@ -290,10 +290,8 @@ class Controller_utama extends Controller
             $pemesanan=Pemesanan::select(
                 'pemesanans.id',
                 'pemesanans.nama as nama_pembeli',
-                'menus.nama as nama_menu',
                 'pemesanans.status as status'
             )
-            ->join('menus','pemesanans.id_menu','=','menus.id')
             ->where('pemesanans.status','!=','2')
             ->get();
             
@@ -439,9 +437,9 @@ class Controller_utama extends Controller
                 'message'=> 'Pesanan Kosong'
             ]);
         }
-        $simpan=Pemesanan::create([]);
+        $simpan=Pemesanan::create(['nama' => $data->nama,]);
         foreach ($data->pesan as $key) {
-            Pemesanan::create([
+            Pemesanan_detail::create([
                 // 'nama' => $data->nama,
                 'id_pemesanan' => $simpan->id,
                 'id_menu' => $key,
@@ -472,10 +470,8 @@ class Controller_utama extends Controller
             $pemesanan=Pemesanan::select(
                     'pemesanans.id',
                     'pemesanans.nama as nama_pembeli',
-                    'menus.nama as nama_menu',
                     'pemesanans.status as status'
-                )
-                ->join('menus','pemesanans.id_menu','=','menus.id')
+                )              
                 ->where('pemesanans.status','!=','2')
                 ->get();
 
