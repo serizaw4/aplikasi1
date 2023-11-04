@@ -450,8 +450,10 @@ class Controller_utama extends Controller
         foreach ($data->harga as $key) {
             $t_harga+=$key;
         };
-        return $t_harga;
-        $simpan=Pemesanan::create(['nama' => $data->nama,]);
+        $simpan=Pemesanan::create([
+            'nama' => $data->nama,
+            'total_harga' => $t_harga,
+        ]);
         foreach ($data->pesan as $key) {
             Pemesanan_detail::create([
                 // 'nama' => $data->nama,
