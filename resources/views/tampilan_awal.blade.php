@@ -88,6 +88,7 @@
               <th scope="col">Id</th>
               <th scope="col">Nama Pembeli</th>
               <th scope="col">Nama Menu</th>
+              <th scope="col">Total Harga</th>
               <th scope="col">Status</th>
               
             </tr>
