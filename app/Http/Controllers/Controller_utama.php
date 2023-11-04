@@ -446,6 +446,11 @@ class Controller_utama extends Controller
                 'message'=> 'Pesanan Kosong'
             ]);
         }
+        $t_harga=0;
+        foreach ($data->harga as $key) {
+            $t_harga+=$key;
+        };
+        return $t_harga;
         $simpan=Pemesanan::create(['nama' => $data->nama,]);
         foreach ($data->pesan as $key) {
             Pemesanan_detail::create([
@@ -454,14 +459,6 @@ class Controller_utama extends Controller
                 'id_menu' => $key,
             ]);
         }
-
-    public function total_harga()
-    {
-        foreach ($data->harga as $key) {
-            $t_harga=$data->harga+$data->harga;
-        };
-            $simpan=Pemesanan::create(['nama' => $data->nama,$t_harga]);
-    }
         
 
         if($simpan){
