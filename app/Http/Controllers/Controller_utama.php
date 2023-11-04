@@ -454,6 +454,14 @@ class Controller_utama extends Controller
                 'id_menu' => $key,
             ]);
         }
+
+    public function total_harga()
+    {
+        foreach ($data->harga as $key) {
+            $t_harga=$data->harga+$data->harga;
+        };
+            $simpan=Pemesanan::create(['nama' => $data->nama,$t_harga]);
+    }
         
 
         if($simpan){
