@@ -290,13 +290,14 @@ class Controller_utama extends Controller
             $pemesanan=Pemesanan::select(
                 'pemesanans.id',
                 'pemesanans.nama as nama_pembeli',
-                'pemesanans.status as status',
-                'pemesanans.total_harga as total_harga'
+                'pemesanans.status',
+                'pemesanans.total_harga'
             )
             ->where('pemesanans.status','!=','2')
             ->get();
             
             foreach ($pemesanan as $key) {
+                $key['total_harga']=$this->intToRupiah($key['total_harga']);
                 $key['menu']=Pemesanan_detail::select(
                     'pemesanan_details.id',
                     'menus.nama'

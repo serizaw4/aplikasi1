@@ -10,4 +10,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function intToRupiah($angka) {
+        $rupiah = "Rp " . number_format((int) $angka, 0, ',', '.');
+        return $rupiah;
+    }
 }
