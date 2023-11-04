@@ -103,6 +103,7 @@
                   <li>{{ $menus->nama }}</li>
                 @endforeach
               </th>
+              <th scope="row" >{{ $item->total_harga}}</th>
               <th scope="row" >
                     @if ($item->status == 0)
                     <div class="alert alert-danger" role="alert">

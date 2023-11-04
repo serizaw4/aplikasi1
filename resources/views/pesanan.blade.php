@@ -101,6 +101,7 @@
                   <th scope="col">Id</th>
                   <th scope="col">Nama Pembeli</th>
                   <th scope="col">Nama Menu</th>
+                  <th scope="col">Total Harga</th>
                   <th scope="col">Aksi</th>
                   <th scope="col">Status</th>
                   
@@ -117,6 +118,7 @@
                   <li>{{ $menus->nama }}</li>
                 @endforeach
                 </ul>
+                <th scope="row" >{{ $item->total_harga }}</th>
               </th>
                   <th scope="row" >
                     @if ($item->status == 0)

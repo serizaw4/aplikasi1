@@ -290,7 +290,8 @@ class Controller_utama extends Controller
             $pemesanan=Pemesanan::select(
                 'pemesanans.id',
                 'pemesanans.nama as nama_pembeli',
-                'pemesanans.status as status'
+                'pemesanans.status as status',
+                'pemesanans.total_harga as total_harga'
             )
             ->where('pemesanans.status','!=','2')
             ->get();
@@ -486,7 +487,8 @@ class Controller_utama extends Controller
             $pemesanan=Pemesanan::select(
                     'pemesanans.id',
                     'pemesanans.nama as nama_pembeli',
-                    'pemesanans.status as status'
+                    'pemesanans.status as status',
+                    'pemesanans.total_harga as total_harga'
                 )              
                 ->where('pemesanans.status','!=','2')
                 ->get();
