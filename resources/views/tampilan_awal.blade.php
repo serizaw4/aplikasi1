@@ -181,6 +181,7 @@
       <div class="items">
         <input name="pesan[]" type=hidden value="{{ $item->id }}">
       <img src="{{ asset('storage/menu/'.$item->foto) }}" class="img-fluid" alt="">
+      <input name="harga[]" type='number' value="{{ $item->harga }}">
       </div>
       <div class="portfolio-info">
         <h3><a href="{{ asset('storage/menu/'.$item->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">{{$item->nama}}</a></h3>
